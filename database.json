@@ -1,5 +1,9 @@
 [
     {
-        nombre: "Bulbasour";
+        "imgPokemon":"./img/pokemon/Bulbasaur-PNG-Transparent-Image.png",
+        "idPokemon":"001",
+        "nombre":"Bulbasour",
+        "tipoPokemon":["./img/icon/poison.svg","img/icon/grass.svg"],
+        "colorTarjeta":"#b96889"
     }
 ]
