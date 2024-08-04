@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+    --color-primario:#C50404;
+    --tarjeta-violeta:blueviolet;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 26px;
+    font-family: "roboto";
+}
+
+body {
+    background-color:var(--color-primario);
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.dexImg {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+    height: auto;
+}
+
+.logoPokemon {
+    width: 500px;
+    height: auto;
+}
+
+main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.tarjetas {
+    width: 90%;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 150px 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.tarjetaPokemon {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: var(--tarjeta-violeta);
+    width: 270px;
+    height: 350px;
+    
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.iconos{
+    display: flex;
+    gap: 20px;
+}
+.contenedorIcon {
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #d4d4d441;
+    border-radius: 50%;
+}
+.contenedorImg {
+    position:relative;
+    width: 170px;
+    top: -40px;
+    background-color: #d4d4d441;
+    border-radius: 50%;
+    margin: -55px;
+}
+.informacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    border: none;
+    width: 150px;
+    height: 40px;
+    font-size: 0.8em;
+    background-color: rgb(120, 18, 216);
+    color:  #beafaf;
+}
+.informacion:hover{
+    background-color:rgb(86, 8, 158);
+}
+.identificador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d4d4d470;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 1em;
+}
+.nombre {
+    font-size: 1.2em;
+    color: #beafaf;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    margin:100px 0;
+}
+.masPokemon {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 310px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: rgb(252, 101, 1);
+    color: aliceblue;
+}
+.masPokemon:hover {
+    background-color:rgb(252, 115, 24) ;
+}
