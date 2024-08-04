@@ -1,6 +1,5 @@
 [
     {
-<<<<<<< HEAD
         "imgPokemon":"./img/pokemon/001.png",
         "idPokemon":"001",
         "nombre":"Bulbasour",
@@ -110,13 +109,6 @@
         "idPokemon":"015",
         "nombre":"Beedrill",
         "tipoPokemon":"./img/icon/poison.svg",
-        "subTipo":"./img/icon/bug.png",
-=======
-        "imgPokemon":"./img/pokemon/Bulbasaur.png",
-        "idPokemon":"001",
-        "nombre":"Bulbasour",
-        "tipoPokemon":["./img/icon/poison.svg","./img/icon/grass.svg"],
->>>>>>> a63370b57f64e283e6f9855bb9707ea33210690f
-        "colorTarjeta":"#b96889"
+        "subTipo":"./img/icon/bug.png"
     }
 ]
