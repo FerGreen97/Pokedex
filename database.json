@@ -49,35 +49,35 @@
         "imgPokemon":"./img/pokemon/007.png",
         "idPokemon":"007",
         "nombre":"Squirtle",
-        "tipoPokemon":"./img/icon/water.png",
+        "tipoPokemon":"./img/icon/water.svg",
         "colorTarjeta":"#92a0c2"
     },
     {
         "imgPokemon":"./img/pokemon/008.png",
         "idPokemon":"008",
         "nombre":"Wartortle",
-        "tipoPokemon":"./img/icon/water.png",
+        "tipoPokemon":"./img/icon/water.svg",
         "colorTarjeta":"#92a0c2"
     },
     {
         "imgPokemon":"./img/pokemon/009.png",
         "idPokemon":"009",
         "nombre":"Blastoise",
-        "tipoPokemon":"./img/icon/water.png",
+        "tipoPokemon":"./img/icon/water.svg",
         "colorTarjeta":"#92a0c2"
     },
     {
         "imgPokemon":"./img/pokemon/010.png",
         "idPokemon":"010",
         "nombre":"Caterpie",
-        "tipoPokemon":"./img/icon/bug.png",
+        "tipoPokemon":"./img/icon/bug.svg",
         "colorTarjeta":"#bebb30"
     },
     {
         "imgPokemon":"./img/pokemon/011.png",
         "idPokemon":"011",
         "nombre":"Metapod",
-        "tipoPokemon":"./img/icon/bug.png",
+        "tipoPokemon":"./img/icon/bug.svg",
         "colorTarjeta":"#bebb30"
     },
     {
@@ -85,7 +85,7 @@
         "idPokemon":"012",
         "nombre":"Buttefree",
         "tipoPokemon":"./img/icon/flying.svg",
-        "subTipo":"./img/icon/bug.png",
+        "subTipo":"./img/icon/bug.svg",
         "colorTarjeta":"#bebb30"
     },
     {
@@ -93,7 +93,7 @@
         "idPokemon":"013",
         "nombre":"Weedle",
         "tipoPokemon":"./img/icon/poison.svg",
-        "subTipo":"./img/icon/bug.png",
+        "subTipo":"./img/icon/bug.svg",
         "colorTarjeta":"#b96889"
     },
     {
@@ -101,7 +101,7 @@
         "idPokemon":"014",
         "nombre":"Kakuna",
         "tipoPokemon":"./img/icon/poison.svg",
-        "subTipo":"./img/icon/bug.png",
+        "subTipo":"./img/icon/bug.svg",
         "colorTarjeta":"#b96889"
     },
     {
@@ -109,6 +109,6 @@
         "idPokemon":"015",
         "nombre":"Beedrill",
         "tipoPokemon":"./img/icon/poison.svg",
-        "subTipo":"./img/icon/bug.png"
+        "subTipo":"./img/icon/bug.svg"
     }
 ]
