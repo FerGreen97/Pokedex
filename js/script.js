@@ -5,19 +5,19 @@ fetch("./database.json")
     .then(data =>{
         for(const pokemon of data){
             contenidoTarjetasHTML.innerHTML += `
-            <div class="tarjetaPokemon"">
-                    <div class="contenedorImg">
-                        <img src="${pokemon.imgPokemon}" >
-                    </div>
-                    <span class="identificador">#${pokemon.idPokemon}</span>
-                    <span class="nombre">${pokemon.nombre}</span>
-                    <div class="iconos" id="${pokemon.idPokemon}">
-                        <div class="contenedorIcon">
-                            <img src="${pokemon.tipoPokemon}">
+                <div class="tarjetaPokemon" style="background-color:${pokemon.colorTarjeta}">
+                        <div class="contenedorImg">
+                            <img src="${pokemon.imgPokemon}" >
                         </div>
+                        <span class="identificador">#${pokemon.idPokemon}</span>
+                        <span class="nombre">${pokemon.nombre}</span>
+                        <div class="iconos" id="${pokemon.idPokemon}">
+                            <div class="contenedorIcon">
+                                <img src="${pokemon.tipoPokemon}">
+                            </div>
+                        </div>
+                        <button class="informacion">Informacion</button>
                     </div>
-                    <button class="informacion">Informacion</button>
-                </div>
             `
         }
     }
