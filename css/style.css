@@ -96,7 +96,7 @@ main{
     height: 40px;
     font-size: 0.8em;
     background-color: rgb(120, 18, 216);
-    color:  #beafaf;
+    box-shadow: 5px 5px 5px #1d050578;
 }
 .informacion:hover{
     background-color:rgb(86, 8, 158);
@@ -113,7 +113,6 @@ main{
 }
 .nombre {
     font-size: 1.2em;
-    color: #beafaf;
 }
 footer {
     display: flex;
