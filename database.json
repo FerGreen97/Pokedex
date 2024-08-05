@@ -28,6 +28,7 @@
         "idPokemon":"004",
         "nombre":"Charmander",
         "tipoPokemon":"img/icon/fire.svg",
+        "subTipo": "no",
         "colorTarjeta":"#f2953b"
     },
     {
@@ -35,6 +36,7 @@
         "idPokemon":"005",
         "nombre":"Charmeleon",
         "tipoPokemon":"img/icon/fire.svg",
+        "subTipo": "no",
         "colorTarjeta":"#f2953b"
     },
     {
@@ -50,6 +52,7 @@
         "idPokemon":"007",
         "nombre":"Squirtle",
         "tipoPokemon":"./img/icon/water.svg",
+        "subTipo": "no",
         "colorTarjeta":"#92a0c2"
     },
     {
@@ -57,6 +60,7 @@
         "idPokemon":"008",
         "nombre":"Wartortle",
         "tipoPokemon":"./img/icon/water.svg",
+        "subTipo": "no",
         "colorTarjeta":"#92a0c2"
     },
     {
@@ -64,6 +68,7 @@
         "idPokemon":"009",
         "nombre":"Blastoise",
         "tipoPokemon":"./img/icon/water.svg",
+        "subTipo": "no",
         "colorTarjeta":"#92a0c2"
     },
     {
@@ -71,6 +76,7 @@
         "idPokemon":"010",
         "nombre":"Caterpie",
         "tipoPokemon":"./img/icon/bug.svg",
+        "subTipo": "no",
         "colorTarjeta":"#bebb30"
     },
     {
@@ -78,6 +84,7 @@
         "idPokemon":"011",
         "nombre":"Metapod",
         "tipoPokemon":"./img/icon/bug.svg",
+        "subTipo": "no",
         "colorTarjeta":"#bebb30"
     },
     {
