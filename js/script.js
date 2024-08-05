@@ -13,7 +13,7 @@ fetch("./database.json")
                     <span class="nombre">${pokemon.nombre}</span>
                     <div class="iconos" id="${pokemon.idPokemon}">
                         <div class="contenedorIcon">
-                            <img src="${pokemon.tipoPokemon}">                            
+                            <img src="${pokemon.tipoPokemon}">
                         </div>
                     </div>
                     <button class="informacion">Informacion</button>
