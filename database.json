@@ -1,7 +1,7 @@
 [
     {
         "imgPokemon":"./img/pokemon/001.png",
-        "idPokemon":"001",
+        "idPokemon":1,
         "nombre":"Bulbasour",
         "tipoPokemon":"./img/icon/poison.svg",
         "subTipo":"img/icon/grass.svg",
@@ -9,7 +9,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/002.png",
-        "idPokemon":"002",
+        "idPokemon":2,
         "nombre":"Ivysaur",
         "tipoPokemon":"./img/icon/poison.svg",
         "subTipo":"img/icon/grass.svg",
@@ -17,7 +17,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/003.png",
-        "idPokemon":"003",
+        "idPokemon":3,
         "nombre":"Venusaur",
         "tipoPokemon":"./img/icon/poison.svg",
         "subTipo":"img/icon/grass.svg",
@@ -25,7 +25,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/004.png",
-        "idPokemon":"004",
+        "idPokemon":4,
         "nombre":"Charmander",
         "tipoPokemon":"img/icon/fire.svg",
         "subTipo": "no",
@@ -33,7 +33,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/005.png",
-        "idPokemon":"005",
+        "idPokemon":5,
         "nombre":"Charmeleon",
         "tipoPokemon":"img/icon/fire.svg",
         "subTipo": "no",
@@ -41,7 +41,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/006.png",
-        "idPokemon":"006",
+        "idPokemon":6,
         "nombre":"Charizar",
         "tipoPokemon":"./img/icon/flying.svg",
         "subTipo":"img/icon/fire.svg",
@@ -49,7 +49,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/007.png",
-        "idPokemon":"007",
+        "idPokemon":7,
         "nombre":"Squirtle",
         "tipoPokemon":"./img/icon/water.svg",
         "subTipo": "no",
@@ -57,7 +57,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/008.png",
-        "idPokemon":"008",
+        "idPokemon":8,
         "nombre":"Wartortle",
         "tipoPokemon":"./img/icon/water.svg",
         "subTipo": "no",
@@ -65,7 +65,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/009.png",
-        "idPokemon":"009",
+        "idPokemon":9,
         "nombre":"Blastoise",
         "tipoPokemon":"./img/icon/water.svg",
         "subTipo": "no",
@@ -73,7 +73,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/010.png",
-        "idPokemon":"010",
+        "idPokemon":10,
         "nombre":"Caterpie",
         "tipoPokemon":"./img/icon/bug.svg",
         "subTipo": "no",
@@ -81,7 +81,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/011.png",
-        "idPokemon":"011",
+        "idPokemon":11,
         "nombre":"Metapod",
         "tipoPokemon":"./img/icon/bug.svg",
         "subTipo": "no",
@@ -89,7 +89,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/012.png",
-        "idPokemon":"012",
+        "idPokemon":12,
         "nombre":"Buttefree",
         "tipoPokemon":"./img/icon/flying.svg",
         "subTipo":"./img/icon/bug.svg",
@@ -97,7 +97,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/013.png",
-        "idPokemon":"013",
+        "idPokemon":13,
         "nombre":"Weedle",
         "tipoPokemon":"./img/icon/poison.svg",
         "subTipo":"./img/icon/bug.svg",
@@ -105,7 +105,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/014.png",
-        "idPokemon":"014",
+        "idPokemon":14,
         "nombre":"Kakuna",
         "tipoPokemon":"./img/icon/poison.svg",
         "subTipo":"./img/icon/bug.svg",
@@ -113,7 +113,7 @@
     },
     {
         "imgPokemon":"./img/pokemon/015.png",
-        "idPokemon":"015",
+        "idPokemon":15,
         "nombre":"Beedrill",
         "tipoPokemon":"./img/icon/poison.svg",
         "subTipo":"./img/icon/bug.svg"

@@ -1,39 +1,78 @@
 const contenidoTarjetasHTML = document.getElementById("tarjetas")
 
-fetch("./database.json")
-    .then(response => response.json())
-    .then(data =>{
-        for(const pokemon of data){
-            contenidoTarjetasHTML.innerHTML += `
-                <div class="tarjetaPokemon" style="background-color:${pokemon.colorTarjeta}">
-                        <div class="contenedorImg">
-                            <img src="${pokemon.imgPokemon}" >
-                        </div>
-                        <span class="identificador">#${pokemon.idPokemon}</span>
-                        <span class="nombre">${pokemon.nombre}</span>
-                        <div class="iconos" id="${pokemon.idPokemon}">
-                            <div class="contenedorIcon">
-                                <img src="${pokemon.tipoPokemon}">
-                            </div>
-                        </div>
-                        <button class="informacion">Informacion</button>
-                    </div>
-            `
-        }
-    }
-)
-fetch("./database.json")
-    .then(response => response.json())
-    .then(data =>{
-        for(const pokemon of data){
-            const iconoPokemonHTML = document.getElementById(`${pokemon.idPokemon}`)
-            if(pokemon.subTipo != "no"){
-                iconoPokemonHTML.innerHTML += `
-                    <div class="contenedorIcon">
-                            <img src="${pokemon.subTipo}">                            
-                    </div>
+/* Tarjetas cargadas desde la API pokeapi */
+const pokeapi="https://pokeapi.co/api/v2/pokemon?offset=0limit=20"
+const cargarTarjetas = (apiURL) => {
+    fetch(apiURL)
+        .then(response => response.json())
+        .then(data =>{
+            for(const pokemon of data.results){
+                contenidoTarjetasHTML.innerHTML +=`
+                <div class="tarjetaPokemon" ">
+                <span class="nombre">${pokemon.name}</span>
+                <button class="informacion" onclick="mensaje()">Informacion</button>
+                </div>
                 `
+            }
+        }
+    )
+}
+let offset = 20
+let pokeapiURL = pokeapi
+const cargarMas = () => {
+    pokeapiURL = "https://pokeapi.co/api/v2/pokemon?"+"offset="+offset+"limit=20"
+    offset=offset+20
+    return(cargarTarjetas(pokeapiURL))
+}
+cargarTarjetas(pokeapi)
+
+/*tarjetas cargadas con archivo JSON local*/
+
+/* fetch("./database.json")
+    .then(response => response.json())
+    .then(data =>{
+        for(const pokemon of data){
+            if(pokemon.idPokemon<25){
+                contenidoTarjetasHTML.innerHTML += `
+                <div class="tarjetaPokemon" style="background-color:${pokemon.colorTarjeta}">
+                            <div class="contenedorImg">
+                                <img src="${pokemon.imgPokemon}" >
+                            </div>
+                            <span class="identificador">#${pokemon.idPokemon}</span>
+                            <span class="nombre">${pokemon.nombre}</span>
+                            <div class="iconos" id="tipo${pokemon.idPokemon}">
+                                <div class="contenedorIcon">
+                                    <img src="${pokemon.tipoPokemon}">
+                                </div>
+                            </div>
+                            <button class="informacion" onclick="mensaje()">Informacion</button>
+                        </div>
+                `
+            }else{
+                break
             }
         }
     }
 )
+fetch("./database.json")
+.then(response => response.json())
+    .then(data =>{
+        for(const pokemon of data){
+            if(pokemon.idPokemon<25){
+                const iconoPokemonHTML = document.getElementById(`tipo${pokemon.idPokemon}`)
+                if(pokemon.subTipo != "no"){
+                    iconoPokemonHTML.innerHTML += `
+                        <div class="contenedorIcon">
+                        <img src="${pokemon.subTipo}">                            
+                        </div>
+                    `
+                }
+            }else{
+                break
+            }
+        }
+    }
+)
+const mensaje = () => {
+    console.log("holamundo")
+} */
