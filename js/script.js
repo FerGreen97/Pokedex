@@ -73,6 +73,7 @@ fetch("./database.json")
         }
     }
 )
+*/
 const mensaje = () => {
     console.log("holamundo")
-} */
+} 
