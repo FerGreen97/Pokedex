@@ -20,8 +20,8 @@ const cargarTarjetas = (apiURL) => {
 }
 const cargarMas = () => {
     offset=offset+20
-    pokeapiURL = "https://pokeapi.co/api/v2/pokemon?"+"offset="+offset+"limit=20"
-    return(cargarTarjetas(pokeapi))
+    const pokeapiURL = "https://pokeapi.co/api/v2/pokemon?"+"offset="+offset+"limit=20"
+    return(cargarTarjetas(pokeapiURL))
 }
 cargarTarjetas(pokeapi)
 
