@@ -1,7 +1,8 @@
 const contenidoTarjetasHTML = document.getElementById("tarjetas")
 
 /* Tarjetas cargadas desde la API pokeapi */
-const pokeapi="https://pokeapi.co/api/v2/pokemon?offset=0limit=20"
+let offset = 0
+const pokeapi="https://pokeapi.co/api/v2/pokemon?offset="+offset+"limit=20"
 const cargarTarjetas = (apiURL) => {
     fetch(apiURL)
         .then(response => response.json())
@@ -17,12 +18,10 @@ const cargarTarjetas = (apiURL) => {
         }
     )
 }
-let offset = 20
-let pokeapiURL = pokeapi
 const cargarMas = () => {
-    pokeapiURL = "https://pokeapi.co/api/v2/pokemon?"+"offset="+offset+"limit=20"
     offset=offset+20
-    return(cargarTarjetas(pokeapiURL))
+    pokeapiURL = "https://pokeapi.co/api/v2/pokemon?"+"offset="+offset+"limit=20"
+    return(cargarTarjetas(pokeapi))
 }
 cargarTarjetas(pokeapi)
 
