@@ -34,6 +34,7 @@ const rellenarTarjeta = (pokemonURL,pokename) =>{
     fetch(pokemonURL)
         .then(response => response.json())
         .then(data =>{
+            contenedorPokemonHTML.classList.add(data.types[0].type.name)
             contenedorPokemonHTML.innerHTML = `
             <div class="contenedorImg">
                 <img src="${data.sprites.other.dream_world.front_default}" alt="imagen de ${pokename}">
