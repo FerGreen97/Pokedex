@@ -22,12 +22,12 @@ const cargarTarjetas = (apiURL) => {
         }
     )
 }
+cargarTarjetas(pokeapi)
 const cargarMas = () => {
     offset=offset+20
     const pokeapiURL = "https://pokeapi.co/api/v2/pokemon?"+"offset="+offset+"limit=20"
     return(cargarTarjetas(pokeapiURL))
 }
-cargarTarjetas(pokeapi)
 
 const rellenarTarjeta = (pokemonURL,pokename) =>{
     const contenedorPokemonHTML = document.getElementById(pokename)
@@ -35,31 +35,45 @@ const rellenarTarjeta = (pokemonURL,pokename) =>{
         .then(response => response.json())
         .then(data =>{
             contenedorPokemonHTML.classList.add(data.types[0].type.name)
-            contenedorPokemonHTML.innerHTML = `
-            <div class="contenedorImg">
-                <img src="${data.sprites.other.dream_world.front_default}" alt="imagen de ${pokename}">
-            </div>
-            <span class="identificador">#0${data.id}</span>
-            `+ contenedorPokemonHTML.innerHTML + `
-            <div class="iconos" id="icono${pokename}">
-                
-            </div>
-            `
-            for(const tipoPokemon of data.types){
-                const conenedorIconosHTML = document.getElementById("icono"+pokename)
-                conenedorIconosHTML.innerHTML +=`
-                <div class="contenedorIcon">
-                    <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
-                </div>
-                `
+            if(data.id <10){
+                condicionTarjetas(data,contenedorPokemonHTML,"#00",pokename)
+            }else if(data.id < 100){
+                condicionTarjetas(data,contenedorPokemonHTML,"#0",pokename)
+            }else {
+                condicionTarjetas(data,contenedorPokemonHTML,"#",pokename)
             }
-            contenedorPokemonHTML.innerHTML += `
-                <button class="informacion" onclick="mensaje()">Informacion</button>
-            </div>
-            `
         })
 }
+const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
+    
+                contenedorPokemonHTML.innerHTML = `
+                <div class="contenedorImg">
+                    <img src="${data.sprites.other.dream_world.front_default}" alt="imagen de ${pokename}">
+                </div>
+                <span class="identificador">${valor}${data.id}</span>
+                `+ contenedorPokemonHTML.innerHTML + `
+                <div class="iconos" id="icono${pokename}">
+                    
+                </div>
+                `
+                for(const tipoPokemon of data.types){
+                    const conenedorIconosHTML = document.getElementById("icono"+pokename)
+                    conenedorIconosHTML.innerHTML +=`
+                    <div class="contenedorIcon">
+                        <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
+                    </div>
+                    `
+                }
+                contenedorPokemonHTML.innerHTML += `
+                    <button type="button" class="informacion" onclick="mensaje()">Informacion</button>
+                </div>
+                `
 
+}
+
+const mensaje = () => {
+    console.log("holamundo")
+} 
 
 /*tarjetas cargadas con archivo JSON local*/
 
@@ -109,6 +123,3 @@ fetch("./database.json")
     }
 )
  */
-const mensaje = () => {
-    console.log("holamundo")
-} 
