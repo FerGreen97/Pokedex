@@ -81,6 +81,7 @@ main{
 .contenedorImg {
     position:relative;
     width: 170px;
+    height: 170px;
     top: -40px;
     background-color: #d4d4d441;
     border-radius: 50%;
