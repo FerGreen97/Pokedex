@@ -56,6 +56,7 @@ const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
                     
                 </div>
                 `
+
                 for(const tipoPokemon of data.types){
                     const conenedorIconosHTML = document.getElementById("icono"+pokename)
                     conenedorIconosHTML.innerHTML +=`
