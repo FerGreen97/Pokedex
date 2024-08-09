@@ -63,6 +63,10 @@ main{
     align-items: center;
     gap: 10px;
 }
+.tarjetaPokemon:hover {
+    transition: scale 1.5s;
+    scale:105%;
+}
 .grass {
     background-color: #33d303;
 }
