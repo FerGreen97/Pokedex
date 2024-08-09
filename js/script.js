@@ -19,6 +19,7 @@ const cargarTarjetas = (apiURL) => {
             for(const pokemon of data.results){
                 rellenarTarjeta("https://pokeapi.co/api/v2/pokemon/"+pokemon.name,pokemon.name)
             }
+            contenidoTarjetasHTML.classList.add("primeraCarga")
         }
     )
 }
