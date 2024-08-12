@@ -21,7 +21,9 @@ const cargarTarjetas = (apiURL) => {
             }
         }
     )
+    
 }
+
 cargarTarjetas(pokeapi)
 const cargarMas = () => {
     offset=offset+20
@@ -44,6 +46,7 @@ const rellenarTarjeta = (pokemonURL,pokename) =>{
             }
         })
 }
+
 const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
     
                 contenedorPokemonHTML.innerHTML = `
@@ -56,7 +59,6 @@ const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
                     
                 </div>
                 `
-
                 for(const tipoPokemon of data.types){
                     const conenedorIconosHTML = document.getElementById("icono"+pokename)
                     conenedorIconosHTML.innerHTML +=`
@@ -66,15 +68,32 @@ const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
                     `
                 }
                 contenedorPokemonHTML.innerHTML += `
-                    <button type="button" class="informacion" onclick="mensaje()">Informacion</button>
+                    <button type="button" class="informacion" onclick="info(${pokename}.id)">Informacion</button>
                 </div>
                 `
+}
+const info = (nombrePokemon) => {
+    let ventana = document.getElementById('ventana');
+    ventana = document.createElement('div');
+    ventana.id = 'ventana';
+    ventana.className = 'ventana';
+    const contenidoVentana = document.createElement('div');        
+    contenidoVentana.className = 'contenidoVentana';
+    contenidoVentana.innerHTML = `<p>${nombrePokemon}</p>`;
+    console.dir(nombrePokemon);
+    ventana.appendChild(contenidoVentana);
+    document.body.appendChild(ventana);
+    ventana.onclick = function(event) {
+        if (event.target === ventana) {
+            ventana.style.display = 'none';
+        }
+    }
 
+    ventana.style.display = 'block';
+    
 }
 
-const mensaje = () => {
-    console.log("holamundo")
-} 
+
 
 /*tarjetas cargadas con archivo JSON local*/
 

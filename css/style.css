@@ -64,8 +64,8 @@ main{
     gap: 10px;
 }
 .tarjetaPokemon:hover {
-    transition: scale 1.5s;
-    scale:105%;
+    transition: scale 0.5s;
+    scale:120%;
 }
 .grass {
     background-color: #33d303;
@@ -187,4 +187,22 @@ footer {
 }
 .masPokemon:hover {
     background-color:rgb(252, 115, 24) ;
+}
+.ventana {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+}
+.contenidoVentana {
+    position: relative;
+    margin: 15% auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    width: 50%;
 }
