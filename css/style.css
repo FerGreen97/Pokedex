@@ -183,7 +183,7 @@ footer {
     background-color: #d4d4d441;
 }
 .shiny{
-    background: linear-gradient(135deg,#ff02027d,#ffd0007d, #1df8117d, #00fffb7d,#2600ff7d,#ff008c7d);
+    background: linear-gradient(135deg,#ff0202,#ffd000, #1df811, #00fffb,#2600ff,#ff008c);
 }
 .contenedorHabEst{
     display: flex;
