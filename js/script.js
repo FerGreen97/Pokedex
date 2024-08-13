@@ -73,6 +73,8 @@ const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
                 </div>
                 `
 }
+const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades");
+const contenedorEstadisticasHTML = document.getElementById("contenedorEstadisticas");
 const contenidoVentana = document.getElementById("contenidoVentana")
 const ventana = document.getElementById("ventana")
 const info = (nombrePokemon) => {
@@ -81,13 +83,14 @@ const info = (nombrePokemon) => {
     fetch (pokemonURL) 
         .then(response=>response.json())
         .then(data=>{
+            contenidoVentana.classList.add(data.types[0].type.name)
             contenidoVentana.innerHTML = `<h3>${nombrePokemon}</h3>
             `
             for (const estadistica of data.stats){
                 fetch (estadistica.stat.url)
                     .then (response=>response.json())
                     .then (data =>{
-                        contenidoVentana.innerHTML += `
+                        contenedorEstadisticasHTML.innerHTML += `
                         <div>
                             <span>${data.names[5].name} : ${estadistica.base_stat}</span>
                         </div>
@@ -98,11 +101,11 @@ const info = (nombrePokemon) => {
             contenidoVentana.innerHTML+=`
                 <div class="imagenesVentana">
                     <div class="contenedorImagenes">
-                        <span>${data.name}</span>
+                        <span>Normal</span>
                         <img src= '${data.sprites.other['official-artwork'].front_default}'>
                     </div>
                     <div class="contenedorImagenes">
-                        <span>${data.name} Shiny</span>
+                        <span>Shiny</span>
                         <img src= '${data.sprites.other['official-artwork'].front_shiny}'>
                     </div>
                 </div>
@@ -111,20 +114,22 @@ const info = (nombrePokemon) => {
                 fetch (habilidad.ability.url)
                     .then(response => response.json())
                     .then(data =>{
-                        contenidoVentana.innerHTML +=`
+                        contenedorHabilidadesHTML.innerHTML +=`
                             <div>
                                 <span>${data.names[5].name}</span>
                             </div>
                         `
                     })
             }
-        })
-        ventana.onclick = function(event) {
-            if (event.target === ventana) {
-                ventana.style.display = 'none';
+            ventana.onclick = function(event) {
+                if (event.target === ventana) {
+                    ventana.style.display = 'none';
+                    contenidoVentana.classList.remove(data.types[0].type.name)
+                }
             }
         }
-    }
+    )
+}
 
 
 
