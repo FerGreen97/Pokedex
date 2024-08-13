@@ -159,20 +159,30 @@ footer {
 }
 .contenidoVentana {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
     margin: 15% auto;
     padding: 20px;
-    background: white;
     border-radius: 5px;
     width: 50%;
 }
 .contenedorImagenes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
     width: 170px;
     height: 170px;
 }
+.contenedorHabEst{
+    display: flex;
+}
 .imagenesVentana{
     display: flex;
-    justify-content: space-between;
-    width: 400px;
+    justify-content: space-evenly;
+    width: 100%;
 }
 .grass {
     background-color: #33d303;
