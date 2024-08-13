@@ -166,7 +166,7 @@ footer {
     align-items: center;
     gap: 60px;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 40px;
     width: 50%;
 }
 .contenedorImagenes{
@@ -179,7 +179,7 @@ footer {
 }
 .imagenesVentana div img{
     border: 3px solid black;
-    border-radius: 25%;
+    border-radius: 40px;
     background-color: #d4d4d441;
 }
 .shiny{
@@ -193,7 +193,7 @@ footer {
     order: 3;
 }
 .contenedorEstadisticas,.contenedorHabilidades{
-    border-radius: 15%;
+    border-radius: 40px;
     padding: 15px;
     width: 100%;
 }
@@ -211,6 +211,12 @@ footer {
 }
 .contenedorIcono{
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(224, 255, 255, 0.35);
+    width: 100%;
+    min-height: 70px;
+    border-radius: 40px;
     order: 2;
 }
 .grass {
