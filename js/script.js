@@ -82,7 +82,7 @@ const contenedorIconosVentanaHTML = document.getElementById("contenedorIconoVent
 const contenidoVentana = document.getElementById("contenidoVentana")
 const ventana = document.getElementById("ventana")
 const info = (nombrePokemon) => {
-    ventana.style.display="block";
+    ventana.style.display="flex";
     const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+nombrePokemon;
     fetch(pokemonURL)
         .then(response => response.json())
@@ -96,7 +96,7 @@ const info = (nombrePokemon) => {
             </div>
             <div class="contenedorImagenes">
             <span>Shiny</span>
-            <img src= '${data.sprites.other['official-artwork'].front_shiny}' alt="imagen de ${nombrePokemon} shiny">
+            <img class="shiny" src= '${data.sprites.other['official-artwork'].front_shiny}' alt="imagen de ${nombrePokemon} shiny">
             </div>
             `
             for (const estadistica of data.stats){

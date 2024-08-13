@@ -149,6 +149,8 @@ footer {
 }
 .ventana {
     position: fixed;
+    align-items: center;
+    justify-content: center;
     top: 0;
     left: 0;
     width: 100%;
@@ -162,8 +164,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 45px;
-    margin: 15% auto;
+    gap: 60px;
     padding: 20px;
     border-radius: 5px;
     width: 50%;
@@ -173,16 +174,44 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    width: 170px;
-    height: 170px;
+    width: 190px;
+    height: 190px;
+}
+.imagenesVentana div img{
+    border: 3px solid black;
+    border-radius: 25%;
+    background-color: #d4d4d441;
+}
+.shiny{
+    background: linear-gradient(135deg,#ff02027d,#ffd0007d, #1df8117d, #00fffb7d,#2600ff7d,#ff008c7d);
 }
 .contenedorHabEst{
     display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 15px;
+    order: 3;
+}
+.contenedorEstadisticas,.contenedorHabilidades{
+    border-radius: 15%;
+    padding: 15px;
+    width: 100%;
+}
+.contenedorEstadisticas{
+    background-color: lightblue;
+}
+.contenedorHabilidades{
+    background-color: lightcoral;
 }
 .imagenesVentana{
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    order:1;
+}
+.contenedorIcono{
+    display: flex;
+    order: 2;
 }
 .grass {
     background-color: #33d303;
