@@ -52,7 +52,7 @@ const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
     
                 contenedorPokemonHTML.innerHTML = `
                 <div class="contenedorImg">
-                    <img src="${data.sprites.other.dream_world.front_default}" alt="imagen de ${pokename}">
+                    <img src="${data.sprites.other['official-artwork'].front_default}" alt="imagen de ${pokename}">
                 </div>
                 <span class="identificador">${valor}${data.id}</span>
                 `+ contenedorPokemonHTML.innerHTML + `
@@ -80,8 +80,48 @@ const info = (nombrePokemon) => {
     ventana.className = 'ventana';
     const contenidoVentana = document.createElement('div');        
     contenidoVentana.className = 'contenidoVentana';
-    contenidoVentana.innerHTML = `<p>${nombrePokemon}</p>`;
-    console.dir(nombrePokemon);
+    const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+nombrePokemon;
+    fetch (pokemonURL) 
+        .then(response=>response.json())
+        .then(data=>{
+            contenidoVentana.innerHTML = `<h3>${nombrePokemon}</h3>
+                <div class="imagenesVentana" id='imagenesVentana'></div>
+                <div class="estadisticasVentana" id='estadisticasVentana'></div>
+                <div class="habilidadesVentana" id='habilidadesVentana'></div>
+            `
+            const contenidoImagenesHTML = document.getElementById("imagenesVentana");
+            const contenidoEstaditicasHTML = document.getElementById("estadisticasVentana");
+            const contenidoHabilidadesHTML = document.getElementById("habilidadesVentana");
+            for (const estadistica of data.stats){
+                fetch (estadistica.stat.url)
+                    .then (response=>response.json())
+                    .then (data =>{
+                        contenidoEstaditicasHTML.innerHTML += `
+                        <div>
+                            <span>${data.names[5].name} : ${estadistica.base_stat}</span>
+                        </div>
+                        `
+                    }
+                    )
+            }
+            contenidoImagenesHTML.innerHTML+=`
+                <div>
+                    <img src= '${data.sprites.other['official-artwork'].front_default}'>
+                    <img src= '${data.sprites.other['official-artwork'].front_shiny}'>
+                </div>
+            `
+            for (const habilidad of data.abilities){
+                fetch (habilidad.abilities.url)
+                    .then(response => response.json())
+                    .then(data =>{
+                        contenidoHabilidadesHTML.innerHTML +=`
+                            <div>
+                                <span>${data.names[5].name}</span>
+                            </div>
+                        `
+                    })
+            }
+        })
     ventana.appendChild(contenidoVentana);
     document.body.appendChild(ventana);
     ventana.onclick = function(event) {
