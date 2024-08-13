@@ -61,30 +61,43 @@ const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
                 </div>
                 `
                 for(const tipoPokemon of data.types){
-                    const conenedorIconosHTML = document.getElementById("icono"+pokename)
-                    conenedorIconosHTML.innerHTML +=`
+                    const contenedorIconosHTML = document.getElementById("icono"+pokename)
+                    contenedorIconosHTML.innerHTML +=`
                     <div class="contenedorIcon">
-                        <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
+                        <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}"
                     </div>
                     `
                 }
                 contenedorPokemonHTML.innerHTML += `
-                    <button type="button" class="informacion" onclick="info(${pokename}.id)">Informacion</button>
+                <button type="button" class="informacion" onclick="info(${pokename}.id)">Informacion</button>
                 </div>
                 `
 }
-const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades");
+
+const nombreVentanaHTML = document.getElementById("nombreVentana")
+const imagenesVentanaHTML = document.getElementById("imagenesVentana")
 const contenedorEstadisticasHTML = document.getElementById("contenedorEstadisticas");
+const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades");
+const contenedorIconosVentanaHTML = document.getElementById("contenedorIconoVentana")
 const contenidoVentana = document.getElementById("contenidoVentana")
 const ventana = document.getElementById("ventana")
 const info = (nombrePokemon) => {
     ventana.style.display="block";
     const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+nombrePokemon;
-    fetch (pokemonURL) 
-        .then(response=>response.json())
-        .then(data=>{
+    fetch(pokemonURL)
+        .then(response => response.json())
+        .then(data => {
             contenidoVentana.classList.add(data.types[0].type.name)
-            contenidoVentana.innerHTML = `<h3>${nombrePokemon}</h3>
+            nombreVentanaHTML.innerHTML = `<h3>${nombrePokemon}</h3>`
+            imagenesVentanaHTML.innerHTML = `
+            <div class="contenedorImagenes">
+            <span>Normal</span>
+            <img src= '${data.sprites.other['official-artwork'].front_default}' alt="imagen de ${nombrePokemon}">
+            </div>
+            <div class="contenedorImagenes">
+            <span>Shiny</span>
+            <img src= '${data.sprites.other['official-artwork'].front_shiny}' alt="imagen de ${nombrePokemon} shiny">
+            </div>
             `
             for (const estadistica of data.stats){
                 fetch (estadistica.stat.url)
@@ -98,86 +111,34 @@ const info = (nombrePokemon) => {
                     }
                     )
             }
-            contenidoVentana.innerHTML+=`
-                <div class="imagenesVentana">
-                    <div class="contenedorImagenes">
-                        <span>Normal</span>
-                        <img src= '${data.sprites.other['official-artwork'].front_default}'>
-                    </div>
-                    <div class="contenedorImagenes">
-                        <span>Shiny</span>
-                        <img src= '${data.sprites.other['official-artwork'].front_shiny}'>
-                    </div>
-                </div>
-            `
             for (const habilidad of data.abilities){
                 fetch (habilidad.ability.url)
                     .then(response => response.json())
                     .then(data =>{
                         contenedorHabilidadesHTML.innerHTML +=`
                             <div>
-                                <span>${data.names[5].name}</span>
+                            <span>${data.names[5].name}</span>
                             </div>
-                        `
-                    })
+                            `
+                        }
+                    )
             }
+            for(const tipoPokemon of data.types){
+                contenedorIconosVentanaHTML.innerHTML +=`
+                <div class="contenedorIcon">
+                    <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
+                </div>
+                `
+            }
+                    
             ventana.onclick = function(event) {
                 if (event.target === ventana) {
                     ventana.style.display = 'none';
+                    contenedorEstadisticasHTML.innerHTML = ""
+                    contenedorHabilidadesHTML.innerHTML = ""
+                    contenedorIconosVentanaHTML.innerHTML= ""
                     contenidoVentana.classList.remove(data.types[0].type.name)
                 }
             }
-        }
-    )
+        })
 }
-
-
-
-/*tarjetas cargadas con archivo JSON local*/
-
-/* fetch("./database.json")
-.then(response => response.json())
-    .then(data =>{
-        for(const pokemon of data){
-            if(pokemon.idPokemon<25){
-                contenidoTarjetasHTML.innerHTML += `
-                <div class="tarjetaPokemon" style="background-color:${pokemon.colorTarjeta}">
-                            <div class="contenedorImg">
-                                <img src="${pokemon.imgPokemon}" >
-                            </div>
-                            <span class="identificador">#${pokemon.idPokemon}</span>
-                            <span class="nombre">${pokemon.nombre}</span>
-                            <div class="iconos" id="tipo${pokemon.idPokemon}">
-                                <div class="contenedorIcon">
-                                    <img src="${pokemon.tipoPokemon}">
-                                </div>
-                            </div>
-                            <button class="informacion" onclick="mensaje()">Informacion</button>
-                        </div>
-                `
-            }else{
-                break
-            }
-        }
-    }
-)
-fetch("./database.json")
-.then(response => response.json())
-    .then(data =>{
-        for(const pokemon of data){
-            if(pokemon.idPokemon<25){
-                const iconoPokemonHTML = document.getElementById(`tipo${pokemon.idPokemon}`)
-                if(pokemon.subTipo != "no"){
-                    iconoPokemonHTML.innerHTML += `
-                        <div class="contenedorIcon">
-                        <img src="${pokemon.subTipo}">                            
-                        </div>
-                    `
-                }
-            }else{
-                break
-            }
-        }
-    }
-)
- */
