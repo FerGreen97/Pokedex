@@ -73,9 +73,10 @@ const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
                 </div>
                 `
 }
-const contenidoVentana = document.getElementById("ventana")
+const contenidoVentana = document.getElementById("contenidoVentana")
+const ventana = document.getElementById("ventana")
 const info = (nombrePokemon) => {
-    contenidoVentana.style.display="block";
+    ventana.style.display="block";
     const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+nombrePokemon;
     fetch (pokemonURL) 
         .then(response=>response.json())
@@ -118,6 +119,11 @@ const info = (nombrePokemon) => {
                     })
             }
         })
+        ventana.onclick = function(event) {
+            if (event.target === ventana) {
+                ventana.style.display = 'none';
+            }
+        }
     }
 
 
