@@ -73,30 +73,20 @@ const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
                 </div>
                 `
 }
+const contenidoVentana = document.getElementById("ventana")
 const info = (nombrePokemon) => {
-    let ventana = document.getElementById('ventana');
-    ventana = document.createElement('div');
-    ventana.id = 'ventana';
-    ventana.className = 'ventana';
-    const contenidoVentana = document.createElement('div');        
-    contenidoVentana.className = 'contenidoVentana';
+    contenidoVentana.style.display="block";
     const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+nombrePokemon;
     fetch (pokemonURL) 
         .then(response=>response.json())
         .then(data=>{
             contenidoVentana.innerHTML = `<h3>${nombrePokemon}</h3>
-                <div class="imagenesVentana" id='imagenesVentana'></div>
-                <div class="estadisticasVentana" id='estadisticasVentana'></div>
-                <div class="habilidadesVentana" id='habilidadesVentana'></div>
             `
-            const contenidoImagenesHTML = document.getElementById("imagenesVentana");
-            const contenidoEstaditicasHTML = document.getElementById("estadisticasVentana");
-            const contenidoHabilidadesHTML = document.getElementById("habilidadesVentana");
             for (const estadistica of data.stats){
                 fetch (estadistica.stat.url)
                     .then (response=>response.json())
                     .then (data =>{
-                        contenidoEstaditicasHTML.innerHTML += `
+                        contenidoVentana.innerHTML += `
                         <div>
                             <span>${data.names[5].name} : ${estadistica.base_stat}</span>
                         </div>
@@ -104,17 +94,23 @@ const info = (nombrePokemon) => {
                     }
                     )
             }
-            contenidoImagenesHTML.innerHTML+=`
-                <div>
-                    <img src= '${data.sprites.other['official-artwork'].front_default}'>
-                    <img src= '${data.sprites.other['official-artwork'].front_shiny}'>
+            contenidoVentana.innerHTML+=`
+                <div class="imagenesVentana">
+                    <div class="contenedorImagenes">
+                        <span>${data.name}</span>
+                        <img src= '${data.sprites.other['official-artwork'].front_default}'>
+                    </div>
+                    <div class="contenedorImagenes">
+                        <span>${data.name} Shiny</span>
+                        <img src= '${data.sprites.other['official-artwork'].front_shiny}'>
+                    </div>
                 </div>
             `
             for (const habilidad of data.abilities){
-                fetch (habilidad.abilities.url)
+                fetch (habilidad.ability.url)
                     .then(response => response.json())
                     .then(data =>{
-                        contenidoHabilidadesHTML.innerHTML +=`
+                        contenidoVentana.innerHTML +=`
                             <div>
                                 <span>${data.names[5].name}</span>
                             </div>
@@ -122,17 +118,7 @@ const info = (nombrePokemon) => {
                     })
             }
         })
-    ventana.appendChild(contenidoVentana);
-    document.body.appendChild(ventana);
-    ventana.onclick = function(event) {
-        if (event.target === ventana) {
-            ventana.style.display = 'none';
-        }
     }
-
-    ventana.style.display = 'block';
-    
-}
 
 
 
