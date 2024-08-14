@@ -99,7 +99,7 @@ const info = (idPokemon) => {
                 <img src= '${data.sprites.other['official-artwork'].front_default}' alt="imagen de ${data.name}">
             </div>
             <div class="contenedorImagenes">
-                <span>Shiny</span>
+                <span class="spanShiny">Shiny</span>
                 <img class="shiny" src= '${data.sprites.other['official-artwork'].front_shiny}' alt="imagen de ${data.name} shiny">
             </div>
             `

@@ -196,7 +196,6 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    margin: 0 15px;
     width: 190px;
     height: 190px;
 }
@@ -207,6 +206,9 @@ footer {
 }
 .shiny{
     background: linear-gradient(135deg,#ff0202,#ffd000, #1df811, #00fffb,#2600ff,#ff008c);
+}
+.spanShiny,.shiny{
+    margin-left: 100px;
 }
 .contenedorEstadisticas,.contenedorHabilidades{
     border-radius: 40px;
