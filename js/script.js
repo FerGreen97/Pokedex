@@ -84,6 +84,7 @@ const contenedorFuerzaHTML = document.getElementById("contenedorFuerza")
 const contenedorDebilidadHTML = document.getElementById("contenedorDebilidad")
 const ventana = document.getElementById("ventana")
 let flagElementChildren = 1
+let flagIcono = "primerIcono"
 const info = (idPokemon) => {
     ventana.style.display="flex";
     const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+idPokemon;
@@ -121,7 +122,7 @@ const info = (idPokemon) => {
                     .then(data =>{
                         contenedorHabilidadesHTML.innerHTML +=`
                         <div>
-                        <h4>${data.names[5].name}</h4>
+                        <h4>${data.names[5].name}: </h4>
                         </div>
                         `
                         for(const idioma of data.flavor_text_entries){
@@ -143,12 +144,22 @@ const info = (idPokemon) => {
                 fetch (tipoPokemon.type.url)
                 .then (response => response.json())
                 .then (data=>{
-                    contenedorIconosVentanaHTML.innerHTML +=`
-                    <div class="contenedorIcon">
-                        <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
-                        <span>${data.names[5].name}</span>
-                    </div>
-                    `
+                    if(flagIcono === "primerIcono"){
+                        contenedorIconosVentanaHTML.innerHTML +=`
+                        <div class="contenedorIcon ${flagIcono}" style="grid-area:a">
+                            <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
+                            <span>${data.names[5].name}</span>
+                        </div>
+                        `
+                        flagIcono="segundoIcono"
+                    }else{
+                        contenedorIconosVentanaHTML.innerHTML +=`
+                        <div class="contenedorIcon ${flagIcono}" style="grid-area:b">
+                            <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
+                            <span>${data.names[5].name}</span>
+                        </div>
+                        `
+                    }
                 })
             }
             ventana.onclick = function(event) {
@@ -157,7 +168,15 @@ const info = (idPokemon) => {
                     contenedorEstadisticasHTML.innerHTML = "<h4>Estadisticas</h4>"
                     contenedorHabilidadesHTML.innerHTML = "<h4>Habilidades</h4>"
                     flagElementChildren = 1
-                    contenedorIconosVentanaHTML.innerHTML= ""
+                    flagIcono = "primerIcono"
+                    contenedorIconosVentanaHTML.innerHTML= `
+                    <div id="contenedorFuerza" style="grid-area:c;display:flex;width:100%;height:100%;padding-top:30px;justify-content:center;">
+                        <h4>Fuerte contra </h4>
+                    </div>
+                    <div id="contenedorDebilidad" style="grid-area:d;display:flex;width:100%;height:100%;padding-top:30px;justify-content:center;">
+                        <h4>Debil contra </h4>
+                    </div>
+                    `
                     contenidoVentana.classList.remove(data.types[0].type.name)
                 }
             }
