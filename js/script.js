@@ -81,6 +81,7 @@ const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades
 const contenedorIconosVentanaHTML = document.getElementById("contenedorIconoVentana")
 const contenidoVentana = document.getElementById("contenidoVentana")
 const ventana = document.getElementById("ventana")
+let flagElementChildren = 1
 const info = (idPokemon) => {
     ventana.style.display="flex";
     const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+idPokemon;
@@ -116,17 +117,22 @@ const info = (idPokemon) => {
                     .then(response => response.json())
                     .then(data =>{
                         contenedorHabilidadesHTML.innerHTML +=`
-                            <div>
-                                <h4>${data.names[5].name}</h4>
-                            </div>
-                            `
-                            for(const idioma of data.flavor_text_entries){
-                                if(idioma.language.name == "es"){
-                                    let descripcion = idioma.flavor_text
-                                    contenedorHabilidadesHTML.innerHTML += descripcion
-                                    break
-                                }
+                        <div>
+                        <h4>${data.names[5].name}</h4>
+                        </div>
+                        `
+                        for(const idioma of data.flavor_text_entries){
+                            if(idioma.language.name == "es"){
+                                let descripcion = idioma.flavor_text
+                                contenedorHabilidadesHTML.children[flagElementChildren].innerHTML += `
+                                <span>
+                                    ${descripcion}
+                                </span>
+                                `
+                                flagElementChildren++
+                                break
                             }
+                        }
                         }
                     )
             }
@@ -141,8 +147,9 @@ const info = (idPokemon) => {
             ventana.onclick = function(event) {
                 if (event.target === ventana) {
                     ventana.style.display = 'none';
-                    contenedorEstadisticasHTML.innerHTML = ""
-                    contenedorHabilidadesHTML.innerHTML = ""
+                    contenedorEstadisticasHTML.innerHTML = "<h4>Estadisticas</h4>"
+                    contenedorHabilidadesHTML.innerHTML = "<h4>Habilidades</h4>"
+                    flagElementChildren = 1
                     contenedorIconosVentanaHTML.innerHTML= ""
                     contenidoVentana.classList.remove(data.types[0].type.name)
                 }
