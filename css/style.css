@@ -162,13 +162,34 @@ footer {
 .contenidoVentana {
     animation: cargaTarjetas 0.6s ease-in;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
+    display: grid;
+    grid-template-areas: 
+    "a a a"
+    "b b c"
+    "d d c"
+    "d d e"
+    ;
+    gap: 50px;
     padding: 20px;
     border-radius: 40px;
     width: 50%;
+}
+.nombreVentana{
+    grid-area: a;
+    display: flex;
+    justify-content: center;
+}
+.contenedorImagenes{
+    grid-area: b;
+}
+.contenedorIcono{
+    grid-area: c;
+}
+.contenedorEstadisticas{
+    grid-area: d;
+}
+.contenedorHabilidades{
+    grid-area: e;
 }
 .contenedorImagenes{
     display: flex;
@@ -186,17 +207,19 @@ footer {
 .shiny{
     background: linear-gradient(135deg,#ff0202,#ffd000, #1df811, #00fffb,#2600ff,#ff008c);
 }
-.contenedorHabEst{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    gap: 15px;
-    order: 3;
-}
 .contenedorEstadisticas,.contenedorHabilidades{
     border-radius: 40px;
     padding: 15px;
     width: 100%;
+}
+.contenedorEstadisticas{
+    margin-top: 55px;
+}
+.contenedorEstadisticas div{
+    display: flex;
+}
+.contenedorHabilidades div{
+    display: inline-flex;
 }
 .contenedorEstadisticas{
     background-color: lightblue;
@@ -208,17 +231,49 @@ footer {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    order:1;
 }
 .contenedorIcono{
-    display: flex;
+    order: 5;
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-areas: 
+    "a b"
+    "c c"
+    "d d"
+    ;
+    gap: 20px;
     align-items: center;
     justify-content: space-around;
-    background-color: rgba(224, 255, 255, 0.35);
+    border: 3px solid black;
+    padding: 15px;
     width: 100%;
     min-height: 70px;
     border-radius: 40px;
-    order: 2;
+}
+.contenedorIcono .primerIcono,.contenedorIcono .segundoIcono{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.contenedorIcono .primerIcono{
+    grid-area: a;
+}
+.contenedorIcono .segundoIcono{
+    grid-area: b;
+}
+.contenedorFuerza, .contenedorDebilidad{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    justify-content: center;
+}
+.contenedorFuerza{
+    grid-area: c;
+}
+.contenedorDebilidad{
+    grid-area: d;
 }
 .grass {
     background-color: #33d303;
