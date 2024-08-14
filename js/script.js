@@ -80,6 +80,8 @@ const contenedorEstadisticasHTML = document.getElementById("contenedorEstadistic
 const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades");
 const contenedorIconosVentanaHTML = document.getElementById("contenedorIconoVentana")
 const contenidoVentana = document.getElementById("contenidoVentana")
+const contenedorFuerzaHTML = document.getElementById("contenedorFuerza")
+const contenedorDebilidadHTML = document.getElementById("contenedorDebilidad")
 const ventana = document.getElementById("ventana")
 let flagElementChildren = 1
 const info = (idPokemon) => {
@@ -106,7 +108,8 @@ const info = (idPokemon) => {
                     .then (data =>{
                         contenedorEstadisticasHTML.innerHTML += `
                         <div>
-                            <span>${data.names[5].name} : ${estadistica.base_stat}</span>
+                            <h4>${data.names[5].name} : </h4>
+                            <span>${estadistica.base_stat}</span>
                         </div>
                         `
                     }
@@ -137,13 +140,17 @@ const info = (idPokemon) => {
                     )
             }
             for(const tipoPokemon of data.types){
-                contenedorIconosVentanaHTML.innerHTML +=`
-                <div class="contenedorIcon">
-                    <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
-                </div>
-                `
+                fetch (tipoPokemon.type.url)
+                .then (response => response.json())
+                .then (data=>{
+                    contenedorIconosVentanaHTML.innerHTML +=`
+                    <div class="contenedorIcon">
+                        <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
+                        <span>${data.names[5].name}</span>
+                    </div>
+                    `
+                })
             }
-                 
             ventana.onclick = function(event) {
                 if (event.target === ventana) {
                     ventana.style.display = 'none';
