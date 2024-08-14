@@ -160,6 +160,7 @@ footer {
     z-index: 1000;
 }
 .contenidoVentana {
+    animation: cargaTarjetas 0.6s ease-in;
     position: relative;
     display: flex;
     flex-direction: column;
