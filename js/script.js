@@ -49,7 +49,7 @@ const rellenarTarjeta = (pokemonURL,pokename) =>{
 }
 
 const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
-    
+                let idPokemon = data.id
                 contenedorPokemonHTML.innerHTML = `
                 <div class="contenedorImg">
                     <img src="${data.sprites.other['official-artwork'].front_default}" alt="imagen de ${pokename}">
@@ -69,7 +69,7 @@ const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
                     `
                 }
                 contenedorPokemonHTML.innerHTML += `
-                <button type="button" class="informacion" onclick="info(${pokename}.id)">Informacion</button>
+                <button type="button" class="informacion" onclick="info(${idPokemon})">Informacion</button>
                 </div>
                 `
 }
@@ -81,22 +81,22 @@ const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades
 const contenedorIconosVentanaHTML = document.getElementById("contenedorIconoVentana")
 const contenidoVentana = document.getElementById("contenidoVentana")
 const ventana = document.getElementById("ventana")
-const info = (nombrePokemon) => {
+const info = (idPokemon) => {
     ventana.style.display="flex";
-    const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+nombrePokemon;
+    const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+idPokemon;
     fetch(pokemonURL)
         .then(response => response.json())
         .then(data => {
             contenidoVentana.classList.add(data.types[0].type.name)
-            nombreVentanaHTML.innerHTML = `<h3>${nombrePokemon}</h3>`
+            nombreVentanaHTML.innerHTML = `<h3>${data.name}</h3>`
             imagenesVentanaHTML.innerHTML = `
             <div class="contenedorImagenes">
-            <span>Normal</span>
-            <img src= '${data.sprites.other['official-artwork'].front_default}' alt="imagen de ${nombrePokemon}">
+                <span>Normal</span>
+                <img src= '${data.sprites.other['official-artwork'].front_default}' alt="imagen de ${data.name}">
             </div>
             <div class="contenedorImagenes">
-            <span>Shiny</span>
-            <img class="shiny" src= '${data.sprites.other['official-artwork'].front_shiny}' alt="imagen de ${nombrePokemon} shiny">
+                <span>Shiny</span>
+                <img class="shiny" src= '${data.sprites.other['official-artwork'].front_shiny}' alt="imagen de ${data.name} shiny">
             </div>
             `
             for (const estadistica of data.stats){
@@ -117,9 +117,16 @@ const info = (nombrePokemon) => {
                     .then(data =>{
                         contenedorHabilidadesHTML.innerHTML +=`
                             <div>
-                            <span>${data.names[5].name}</span>
+                                <h4>${data.names[5].name}</h4>
                             </div>
                             `
+                            for(const idioma of data.flavor_text_entries){
+                                if(idioma.language.name == "es"){
+                                    let descripcion = idioma.flavor_text
+                                    contenedorHabilidadesHTML.innerHTML += descripcion
+                                    break
+                                }
+                            }
                         }
                     )
             }
@@ -130,7 +137,7 @@ const info = (nombrePokemon) => {
                 </div>
                 `
             }
-                    
+                 
             ventana.onclick = function(event) {
                 if (event.target === ventana) {
                     ventana.style.display = 'none';
