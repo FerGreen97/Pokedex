@@ -184,9 +184,11 @@ footer {
 }
 .contenedorIcono{
     grid-area: c;
+    max-height: 373px;
 }
 .contenedorEstadisticas{
     grid-area: d;
+    max-height: 260px;
 }
 .contenedorHabilidades{
     grid-area: e;
@@ -238,7 +240,7 @@ footer {
     display: grid;
     grid-template-rows: 1fr 2fr 2fr;
     grid-template-areas: 
-    "a b"
+    "a a"
     "c c"
     "d d"
     ;
@@ -251,7 +253,12 @@ footer {
     min-height: 70px;
     border-radius: 40px;
 }
-.contenedorIcono .primerIcono,.contenedorIcono .segundoIcono{
+.iconos{
+    grid-area: a;
+    display: flex;
+    justify-content: space-around;
+}
+.iconos div{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -265,10 +272,10 @@ footer {
 }
 .contenedorFuerza, .contenedorDebilidad{
     display: flex;
-    width: 100%;
-    height: 100%;
+    flex-direction: column;
     padding-top: 30px;
     justify-content: center;
+    align-items: center;
 }
 .contenedorFuerza{
     grid-area: c;

@@ -79,12 +79,12 @@ const imagenesVentanaHTML = document.getElementById("imagenesVentana")
 const contenedorEstadisticasHTML = document.getElementById("contenedorEstadisticas");
 const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades");
 const contenedorIconosVentanaHTML = document.getElementById("contenedorIconoVentana")
+const contenedorIconosHTML = document.getElementById("iconos")
 const contenidoVentana = document.getElementById("contenidoVentana")
 const contenedorFuerzaHTML = document.getElementById("contenedorFuerza")
 const contenedorDebilidadHTML = document.getElementById("contenedorDebilidad")
 const ventana = document.getElementById("ventana")
 let flagElementChildren = 1
-let flagIcono = "primerIcono"
 const info = (idPokemon) => {
     ventana.style.display="flex";
     const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+idPokemon;
@@ -144,22 +144,13 @@ const info = (idPokemon) => {
                 fetch (tipoPokemon.type.url)
                 .then (response => response.json())
                 .then (data=>{
-                    if(flagIcono === "primerIcono"){
-                        contenedorIconosVentanaHTML.innerHTML +=`
-                        <div class="contenedorIcon ${flagIcono}" style="grid-area:a">
+                    
+                        contenedorIconosHTML.innerHTML +=`
+                        <div class="contenedorIcon">
                             <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
                             <span>${data.names[5].name}</span>
                         </div>
                         `
-                        flagIcono="segundoIcono"
-                    }else{
-                        contenedorIconosVentanaHTML.innerHTML +=`
-                        <div class="contenedorIcon ${flagIcono}" style="grid-area:b">
-                            <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
-                            <span>${data.names[5].name}</span>
-                        </div>
-                        `
-                    }
                 })
             }
             ventana.onclick = function(event) {
@@ -168,15 +159,30 @@ const info = (idPokemon) => {
                     contenedorEstadisticasHTML.innerHTML = "<h4>Estadisticas</h4>"
                     contenedorHabilidadesHTML.innerHTML = "<h4>Habilidades</h4>"
                     flagElementChildren = 1
-                    flagIcono = "primerIcono"
-                    contenedorIconosVentanaHTML.innerHTML= `
-                    <div id="contenedorFuerza" style="grid-area:c;display:flex;width:100%;height:100%;padding-top:30px;justify-content:center;">
-                        <h4>Fuerte contra </h4>
-                    </div>
-                    <div id="contenedorDebilidad" style="grid-area:d;display:flex;width:100%;height:100%;padding-top:30px;justify-content:center;">
-                        <h4>Debil contra </h4>
+                    contenedorIconosHTML.innerHTML= ``
+                    contenedorFuerzaHTML.innerHTML = `<h4>Fuerte contra</h4>
+                    <div style="display:flex; justify-content:center;flex-wrap:wrap;gap:15px;margin-top:10px">
+                        <div class="contenedorIcon">
+                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
+                        </div>
+                        <div class="contenedorIcon">
+                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
+                        </div>
+                        <div class="contenedorIcon">
+                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
+                        </div>
+                        <div class="contenedorIcon">
+                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
+                        </div>
+                        <div class="contenedorIcon">
+                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
+                        </div>
+                        <div class="contenedorIcon">
+                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
+                        </div>
                     </div>
                     `
+                    contenedorDebilidadHTML.innerHTML = `<h4>Debil contra</h4>`
                     contenidoVentana.classList.remove(data.types[0].type.name)
                 }
             }
