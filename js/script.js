@@ -81,8 +81,8 @@ const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades
 const contenedorIconosVentanaHTML = document.getElementById("contenedorIconoVentana")
 const contenedorIconosHTML = document.getElementById("iconos")
 const contenidoVentana = document.getElementById("contenidoVentana")
-const contenedorFuerzaHTML = document.getElementById("contenedorFuerza")
-const contenedorDebilidadHTML = document.getElementById("contenedorDebilidad")
+const contenedorFuerzaHTML = document.getElementById("iconosFuerzaContainer")
+const contenedorDebilidadHTML = document.getElementById("iconosDebilidadContainer")
 const ventana = document.getElementById("ventana")
 let flagElementChildren = 1
 const info = (idPokemon) => {
@@ -144,13 +144,26 @@ const info = (idPokemon) => {
                 fetch (tipoPokemon.type.url)
                 .then (response => response.json())
                 .then (data=>{
-                    
                         contenedorIconosHTML.innerHTML +=`
                         <div class="contenedorIcon">
                             <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
                             <span>${data.names[5].name}</span>
                         </div>
                         `
+                        for(const tipoFuerte of data.damage_relations.double_damage_to){
+                            contenedorFuerzaHTML.innerHTML += `
+                            <div class="contenedorIcon" style="margin: 5px 10px 0px 10px">
+                                <img src="./img/icon/${tipoFuerte.name}.svg"/>
+                            </div>
+                            `
+                        }
+                        for(const tipoDebil of data.damage_relations.double_damage_from){
+                            contenedorDebilidadHTML.innerHTML += `
+                            <div class="contenedorIcon" style="margin: 5px 10px 0px 10px">
+                                <img src="./img/icon/${tipoDebil.name}.svg"/>
+                            </div>
+                            `
+                        }
                 })
             }
             ventana.onclick = function(event) {
@@ -160,29 +173,8 @@ const info = (idPokemon) => {
                     contenedorHabilidadesHTML.innerHTML = "<h4>Habilidades</h4>"
                     flagElementChildren = 1
                     contenedorIconosHTML.innerHTML= ``
-                    contenedorFuerzaHTML.innerHTML = `<h4>Fuerte contra</h4>
-                    <div style="display:flex; justify-content:center;flex-wrap:wrap;gap:15px;margin-top:10px">
-                        <div class="contenedorIcon">
-                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
-                        </div>
-                        <div class="contenedorIcon">
-                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
-                        </div>
-                        <div class="contenedorIcon">
-                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
-                        </div>
-                        <div class="contenedorIcon">
-                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
-                        </div>
-                        <div class="contenedorIcon">
-                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
-                        </div>
-                        <div class="contenedorIcon">
-                            <img src="./img/icon/bug.svg" alt="imagen pokemon tipo bug"/>
-                        </div>
-                    </div>
-                    `
-                    contenedorDebilidadHTML.innerHTML = `<h4>Debil contra</h4>`
+                    contenedorFuerzaHTML.innerHTML = ``
+                    contenedorDebilidadHTML.innerHTML = ``
                     contenidoVentana.classList.remove(data.types[0].type.name)
                 }
             }

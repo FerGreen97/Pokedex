@@ -236,13 +236,12 @@ footer {
     width: 100%;
 }
 .contenedorIcono{
-    order: 5;
     display: grid;
     grid-template-rows: 1fr 2fr 2fr;
     grid-template-areas: 
     "a a"
+    "b b"
     "c c"
-    "d d"
     ;
     gap: 20px;
     align-items: center;
@@ -264,24 +263,18 @@ footer {
     align-items: center;
     gap: 15px;
 }
-.contenedorIcono .primerIcono{
-    grid-area: a;
-}
-.contenedorIcono .segundoIcono{
-    grid-area: b;
-}
 .contenedorFuerza, .contenedorDebilidad{
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 15px;
     justify-content: center;
     align-items: center;
 }
 .contenedorFuerza{
-    grid-area: c;
+    grid-area: b;
 }
 .contenedorDebilidad{
-    grid-area: d;
+    grid-area: c;
 }
 .grass {
     background-color: #33d303;
