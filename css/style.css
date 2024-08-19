@@ -172,7 +172,7 @@ footer {
     gap: 50px;
     padding: 20px;
     border-radius: 40px;
-    width: 50%;
+    width: 60%;
 }
 .nombreVentana{
     grid-area: a;
@@ -216,6 +216,13 @@ footer {
     border-radius: 40px;
     padding: 15px;
     width: 100%;
+    overflow: scroll;
+}
+.contenedorHabilidades{
+    max-height: 132px;
+}
+.contenedorEstadisticas::-webkit-scrollbar,.contenedorHabilidades::-webkit-scrollbar{
+    display: none;
 }
 .contenedorEstadisticas{
     margin-top: 55px;

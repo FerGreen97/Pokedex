@@ -81,7 +81,8 @@ const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades
 const contenedorIconosVentanaHTML = document.getElementById("contenedorIconoVentana")
 const contenedorIconosHTML = document.getElementById("iconos")
 const contenidoVentana = document.getElementById("contenidoVentana")
-const contenedorFuerzaHTML = document.getElementById("iconosFuerzaContainer")
+const contenedorFuerzaHTML = document.getElementById("contenedorFuerza")
+const contenedorIconosFuerzaHTML = document.getElementById("iconosFuerzaContainer")
 const contenedorDebilidadHTML = document.getElementById("iconosDebilidadContainer")
 const ventana = document.getElementById("ventana")
 let flagElementChildren = 1
@@ -144,18 +145,25 @@ const info = (idPokemon) => {
                 fetch (tipoPokemon.type.url)
                 .then (response => response.json())
                 .then (data=>{
+                        contenedorFuerzaHTML.style.display="flex"
                         contenedorIconosHTML.innerHTML +=`
                         <div class="contenedorIcon">
                             <img src="./img/icon/${tipoPokemon.type.name}.svg" alt="icono de pokemon tipo ${tipoPokemon.type.name}">
                             <span>${data.names[5].name}</span>
                         </div>
                         `
-                        for(const tipoFuerte of data.damage_relations.double_damage_to){
-                            contenedorFuerzaHTML.innerHTML += `
-                            <div class="contenedorIcon" style="margin: 5px 10px 0px 10px">
-                                <img src="./img/icon/${tipoFuerte.name}.svg"/>
-                            </div>
-                            `
+                        if(tipoPokemon.type.name === "normal"){
+                            contenedorIconosFuerzaHTML.children[0].style.display="block"
+                            contenedorIconosFuerzaHTML.children[0].style.padding="10px 0px 0px 0px"
+                        }else{
+                            contenedorIconosFuerzaHTML.children[0].style.display="none"
+                            for(const tipoFuerte of data.damage_relations.double_damage_to){
+                                contenedorIconosFuerzaHTML.innerHTML += `
+                                <div class="contenedorIcon" style="margin: 5px 10px 0px 10px">
+                                    <img src="./img/icon/${tipoFuerte.name}.svg"/>
+                                </div>
+                                `
+                            }
                         }
                         for(const tipoDebil of data.damage_relations.double_damage_from){
                             contenedorDebilidadHTML.innerHTML += `
@@ -173,7 +181,7 @@ const info = (idPokemon) => {
                     contenedorHabilidadesHTML.innerHTML = "<h4>Habilidades</h4>"
                     flagElementChildren = 1
                     contenedorIconosHTML.innerHTML= ``
-                    contenedorFuerzaHTML.innerHTML = ``
+                    contenedorIconosFuerzaHTML.innerHTML = `<span style="display: none;">Neutral</span>`
                     contenedorDebilidadHTML.innerHTML = ``
                     contenidoVentana.classList.remove(data.types[0].type.name)
                 }
