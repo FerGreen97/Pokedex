@@ -1,7 +1,20 @@
 const contenidoTarjetasHTML = document.getElementById("tarjetas")
+const nombreVentanaHTML = document.getElementById("nombreVentana")
+const imagenesVentanaHTML = document.getElementById("imagenesVentana")
+const contenedorEstadisticasHTML = document.getElementById("contenedorEstadisticas");
+const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades");
+const contenedorIconosVentanaHTML = document.getElementById("contenedorIconoVentana")
+const contenedorIconosHTML = document.getElementById("iconos")
+const contenidoVentana = document.getElementById("contenidoVentana")
+const contenedorFuerzaHTML = document.getElementById("contenedorFuerza")
+const contenedorIconosFuerzaHTML = document.getElementById("iconosFuerzaContainer")
+const contenedorDebilidadHTML = document.getElementById("iconosDebilidadContainer")
+const ventana = document.getElementById("ventana")
 
 /* Tarjetas cargadas desde la API pokeapi */
 let offset = 0
+let flagElementChildren = 1
+let nombreTiposES = []
 
 const pokeapi="https://pokeapi.co/api/v2/pokemon?offset="+offset+"limit=20"
 
@@ -73,19 +86,174 @@ const condicionTarjetas = (data,contenedorPokemonHTML,valor,pokename) =>{
                 </div>
                 `
 }
+fetch("https://pokeapi.co/api/v2/type")
+    .then(response => response.json())
+    .then(data =>{
+        for(const tipoPokemon of data.results){
+            fetch(tipoPokemon.url)
+                .then(response => response.json())
+                .then(data => {
+                        nombreTiposES.push(`${data.names[5].name}`)
+                })
+        }
+    })
+const obtenerSigernia = (tipoPrincipal,contenedor) => {
+    switch(tipoPrincipal){
+        case "normal":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[0]}</span>
+                </div>
+                `
+            break
+        case "fighting":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[1]}</span>
+                </div>
+                `
+            break
+        case "flying":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[2]}</span>
+                </div>
+                `
+            break
+        case "poison":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[3]}</span>
+                </div>
+                `
+            break
+        case "ground":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[4]}</span>
+                </div>
+                `
+            break
+        case "rock":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[5]}</span>
+                </div>
+                `
+            break
+        case "bug":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[6]}</span>
+                </div>
+                `
+            break
+        case "ghost":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[7]}</span>
+                </div>
+                `
+            break
+        case "steel":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[8]}</span>
+                </div>
+                `
+            break
+        case "fire":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[9]}</span>
+                </div>
+                `
+            break
+        case "water":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[10]}</span>
+                </div>
+                `
+            break
+        case "grass":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[11]}</span>
+                </div>
+                `
+            break
+        case "electric":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[12]}</span>
+                </div>
+                `
+            break
+        case "psychic":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[13]}</span>
+                </div>
+                `
+            break
+        case "ice":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[14]}</span>
+                </div>
+                `
+            break
+        case "dragon":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[15]}</span>
+                </div>
+                `
+            break
+        case "dark":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[16]}</span>
+                </div>
+                `
+            break
+        case "fairy":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[17]}</span>
+                </div>
+                `
+            break
+        case "stellar":
+            contenedor.innerHTML += `
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <span style="font-size:0.6em">${nombreTiposES[18]}</span>
+                </div>
+                `
+            break
+    }
 
-const nombreVentanaHTML = document.getElementById("nombreVentana")
-const imagenesVentanaHTML = document.getElementById("imagenesVentana")
-const contenedorEstadisticasHTML = document.getElementById("contenedorEstadisticas");
-const contenedorHabilidadesHTML = document.getElementById("contenedorHabilidades");
-const contenedorIconosVentanaHTML = document.getElementById("contenedorIconoVentana")
-const contenedorIconosHTML = document.getElementById("iconos")
-const contenidoVentana = document.getElementById("contenidoVentana")
-const contenedorFuerzaHTML = document.getElementById("contenedorFuerza")
-const contenedorIconosFuerzaHTML = document.getElementById("iconosFuerzaContainer")
-const contenedorDebilidadHTML = document.getElementById("iconosDebilidadContainer")
-const ventana = document.getElementById("ventana")
-let flagElementChildren = 1
+}
 const info = (idPokemon) => {
     ventana.style.display="flex";
     const pokemonURL = "https://pokeapi.co/api/v2/pokemon/"+idPokemon;
@@ -158,21 +326,11 @@ const info = (idPokemon) => {
                         }else{
                             contenedorIconosFuerzaHTML.children[0].style.display="none"
                             for(const tipoFuerte of data.damage_relations.double_damage_to){
-                                contenedorIconosFuerzaHTML.innerHTML += `
-                                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:15px;margin: 15px 7px 0px 7px">
-                                    <img src="./img/icon/${tipoFuerte.name}.svg"/>
-                                    <span style="font-size:0.7em">${tipoFuerte.name}</span>
-                                </div>
-                                `
+                                obtenerSigernia(tipoFuerte.name,contenedorIconosFuerzaHTML)
                             }
                         }
                         for(const tipoDebil of data.damage_relations.double_damage_from){
-                            contenedorDebilidadHTML.innerHTML += `
-                            <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:15px;margin: 15px 7px 0px 7px">
-                                <img src="./img/icon/${tipoDebil.name}.svg"/>
-                                <span style="font-size:0.7em">${tipoDebil.name}</span>
-                            </div>
-                            `
+                            obtenerSigernia(tipoDebil.name,contenedorDebilidadHTML)
                         }
                 })
             }
