@@ -320,7 +320,7 @@ const info = (idPokemon) => {
                             <span>${data.names[5].name}</span>
                         </div>
                         `
-                        if(tipoPokemon.type.name === "normal"){
+                        if(tipoPokemon.slot === 1 && tipoPokemon.type.name === "normal"){
                             contenedorIconosFuerzaHTML.children[0].style.display="block"
                             contenedorIconosFuerzaHTML.children[0].style.padding="10px 0px 0px 0px"
                         }else{
