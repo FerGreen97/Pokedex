@@ -344,7 +344,7 @@ footer {
     background-color: #0385e9;
 }
 /*Inicio responsive de la pagina.*/
-@media (max-width: 1440px) {
+@media (max-width: 1850px) {
     .contenidoVentana{
         grid-template-areas: 
         "a"
