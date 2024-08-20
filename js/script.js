@@ -101,7 +101,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
     switch(tipoPrincipal){
         case "normal":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[0]}</span>
                 </div>
@@ -109,7 +109,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "fighting":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[1]}</span>
                 </div>
@@ -117,7 +117,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "flying":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[2]}</span>
                 </div>
@@ -125,7 +125,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "poison":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[3]}</span>
                 </div>
@@ -133,7 +133,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "ground":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[4]}</span>
                 </div>
@@ -141,7 +141,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "rock":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[5]}</span>
                 </div>
@@ -149,7 +149,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "bug":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[6]}</span>
                 </div>
@@ -157,7 +157,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "ghost":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[7]}</span>
                 </div>
@@ -165,7 +165,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "steel":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[8]}</span>
                 </div>
@@ -173,7 +173,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "fire":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[9]}</span>
                 </div>
@@ -181,7 +181,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "water":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[10]}</span>
                 </div>
@@ -189,7 +189,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "grass":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[11]}</span>
                 </div>
@@ -197,7 +197,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "electric":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[12]}</span>
                 </div>
@@ -205,7 +205,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "psychic":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[13]}</span>
                 </div>
@@ -213,7 +213,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "ice":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[14]}</span>
                 </div>
@@ -221,7 +221,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "dragon":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[15]}</span>
                 </div>
@@ -229,7 +229,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "dark":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[16]}</span>
                 </div>
@@ -237,7 +237,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "fairy":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[17]}</span>
                 </div>
@@ -245,7 +245,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
             break
         case "stellar":
             contenedor.innerHTML += `
-                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 7px 0px 7px">
+                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
                     <img src="./img/icon/${tipoPrincipal}.svg"/>
                     <span style="font-size:0.6em">${nombreTiposES[18]}</span>
                 </div>
