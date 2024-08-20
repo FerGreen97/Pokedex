@@ -165,38 +165,37 @@ footer {
     position: relative;
     display: grid;
     grid-template-areas: 
-    "a a a"
-    "b b c"
-    "d d c"
-    "d d e"
+    "nomb nomb nomb"
+    "img img ico"
+    "est est ico"
+    "est est hab"
     ;
     gap: 50px;
     padding: 20px;
     border-radius: 40px;
     width: 60%;
+    max-width: 1365px;
+    min-width: 1150px;
 }
 .nombreVentana{
-    grid-area: a;
+    grid-area: nomb;
     display: flex;
     justify-content: center;
 }
-.contenedorImagenes{
-    grid-area: b;
-}
 .imagenesVentana{
-    grid-area: b;
+    grid-area: img;
 }
 .contenedorIcono{
-    grid-area: c;
+    grid-area: ico;
     height: 383px;
     max-width: 895px;
 }
 .contenedorEstadisticas{
-    grid-area: d;
+    grid-area: est;
     max-height: 260px;
 }
 .contenedorHabilidades{
-    grid-area: e;
+    grid-area: hab;
 }
 .contenedorImagenes{
     display: flex;
@@ -253,9 +252,9 @@ footer {
     display: grid;
     grid-template-rows: 1fr 2fr 2fr;
     grid-template-areas: 
-    "a a"
-    "b b"
-    "c c"
+    "tipoPokemon tipoPokemon"
+    "fuerteContra fuerteContra"
+    "debilContra debilContra"
     ;
     align-items: center;
     justify-content: space-around;
@@ -267,7 +266,7 @@ footer {
     border-radius: 40px;
 }
 .iconos{
-    grid-area: a;
+    grid-area: tipoPokemon;
     display: flex;
     justify-content: space-around;
 }
@@ -285,10 +284,10 @@ footer {
     align-items: center;
 }
 .contenedorFuerza{
-    grid-area: b;
+    grid-area: fuerteContra;
 }
 .contenedorDebilidad{
-    grid-area: c;
+    grid-area: debilContra;
 }
 .grass {
     background-color: #33d303;
@@ -348,10 +347,14 @@ footer {
 @media (max-width: 1850px) {
     .contenidoVentana{
         grid-template-areas: 
-        "a"
-        "b"
-        "d"
+        "nomb"
+        "img"
+        "ico"
+        "est"
+        "hab"
         ;
+        max-width: 710px;
+        min-width: 520px;
     }
     .imagenesVentana{
         justify-content: space-around;
@@ -376,6 +379,7 @@ footer {
     }
     .contenedorEstadisticas{
         min-width: 290px;
+        max-height: none;
     }
     .logoPokemon{
         width: 300px;

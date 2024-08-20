@@ -102,7 +102,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "normal":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[0]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[0]}</span>
                 </div>
                 `
@@ -110,7 +110,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "fighting":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[1]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[1]}</span>
                 </div>
                 `
@@ -118,7 +118,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "flying":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[2]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[2]}</span>
                 </div>
                 `
@@ -126,7 +126,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "poison":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[3]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[3]}</span>
                 </div>
                 `
@@ -134,7 +134,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "ground":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[4]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[4]}</span>
                 </div>
                 `
@@ -142,7 +142,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "rock":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[5]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[5]}</span>
                 </div>
                 `
@@ -150,7 +150,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "bug":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[6]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[6]}</span>
                 </div>
                 `
@@ -158,7 +158,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "ghost":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[7]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[7]}</span>
                 </div>
                 `
@@ -166,7 +166,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "steel":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[8]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[8]}</span>
                 </div>
                 `
@@ -174,7 +174,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "fire":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[9]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[9]}</span>
                 </div>
                 `
@@ -182,7 +182,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "water":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[10]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[10]}</span>
                 </div>
                 `
@@ -190,7 +190,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "grass":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[11]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[11]}</span>
                 </div>
                 `
@@ -198,7 +198,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "electric":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[12]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[12]}</span>
                 </div>
                 `
@@ -206,7 +206,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "psychic":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[13]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[13]}</span>
                 </div>
                 `
@@ -214,7 +214,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "ice":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[14]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[14]}</span>
                 </div>
                 `
@@ -222,7 +222,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "dragon":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[15]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[15]}</span>
                 </div>
                 `
@@ -230,7 +230,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "dark":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[16]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[16]}</span>
                 </div>
                 `
@@ -238,7 +238,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "fairy":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[17]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[17]}</span>
                 </div>
                 `
@@ -246,7 +246,7 @@ const obtenerSigernia = (tipoPrincipal,contenedor) => {
         case "stellar":
             contenedor.innerHTML += `
                 <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:20px;margin: 15px 8px 0px 8px">
-                    <img src="./img/icon/${tipoPrincipal}.svg"/>
+                    <img src="./img/icon/${tipoPrincipal}.svg" alt="icono pokemon tipo ${nombreTiposES[18]}"/>
                     <span style="font-size:0.6em">${nombreTiposES[18]}</span>
                 </div>
                 `
