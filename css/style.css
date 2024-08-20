@@ -182,6 +182,9 @@ footer {
 .contenedorImagenes{
     grid-area: b;
 }
+.imagenesVentana{
+    grid-area: b;
+}
 .contenedorIcono{
     grid-area: c;
     height: 383px;
@@ -221,6 +224,8 @@ footer {
 }
 .contenedorHabilidades{
     max-height: 132px;
+    max-width: 895px;
+    margin-left: 10px;
 }
 .contenedorEstadisticas::-webkit-scrollbar,.contenedorHabilidades::-webkit-scrollbar{
     display: none;
@@ -255,6 +260,7 @@ footer {
     justify-content: space-around;
     border: 3px solid black;
     padding: 15px;
+    margin-left: 10px;
     width: 100%;
     min-height: 70px;
     border-radius: 40px;
@@ -336,4 +342,38 @@ footer {
 }
 .water {
     background-color: #0385e9;
+}
+/*Inicio responsive de la pagina.*/
+@media (max-width: 1440px) {
+    .contenidoVentana{
+        grid-template-areas: 
+        "a"
+        "b"
+        "d"
+        ;
+    }
+    .imagenesVentana{
+        justify-content: space-around;
+    }
+    .spanShiny,.shiny{
+        margin: 0;
+    }
+    .contenedorIcono,.contenedorHabilidades{
+        display: none;
+    }
+}
+@media (max-width: 650px) {
+    .spanShiny,.shiny{
+        display: none;
+    }
+    .containerShiny{
+        display: none;
+    }
+    .contenidoVentana{
+        padding: 10px;
+        min-width: 300px;
+    }
+    .contenedorEstadisticas{
+        min-width: 280px;
+    }
 }
