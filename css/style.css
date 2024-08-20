@@ -184,7 +184,7 @@ footer {
 }
 .contenedorIcono{
     grid-area: c;
-    max-height: 363px;
+    height: 383px;
     max-width: 895px;
 }
 .contenedorEstadisticas{
@@ -251,7 +251,6 @@ footer {
     "b b"
     "c c"
     ;
-    gap: 20px;
     align-items: center;
     justify-content: space-around;
     border: 3px solid black;

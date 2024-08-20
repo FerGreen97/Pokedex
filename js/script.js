@@ -159,16 +159,18 @@ const info = (idPokemon) => {
                             contenedorIconosFuerzaHTML.children[0].style.display="none"
                             for(const tipoFuerte of data.damage_relations.double_damage_to){
                                 contenedorIconosFuerzaHTML.innerHTML += `
-                                <div class="contenedorIcon" style="margin: 15px 5px 0px 5px">
+                                <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:15px;margin: 15px 7px 0px 7px">
                                     <img src="./img/icon/${tipoFuerte.name}.svg"/>
+                                    <span style="font-size:0.7em">${tipoFuerte.name}</span>
                                 </div>
                                 `
                             }
                         }
                         for(const tipoDebil of data.damage_relations.double_damage_from){
                             contenedorDebilidadHTML.innerHTML += `
-                            <div class="contenedorIcon" style="margin: 15px 5px 0px 5px">
+                            <div class="contenedorIcon" style="display:flex;flex-direction:column;align-items:center;gap:15px;margin: 15px 7px 0px 7px">
                                 <img src="./img/icon/${tipoDebil.name}.svg"/>
+                                <span style="font-size:0.7em">${tipoDebil.name}</span>
                             </div>
                             `
                         }
