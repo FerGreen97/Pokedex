@@ -184,7 +184,8 @@ footer {
 }
 .contenedorIcono{
     grid-area: c;
-    max-height: 373px;
+    max-height: 363px;
+    max-width: 895px;
 }
 .contenedorEstadisticas{
     grid-area: d;
