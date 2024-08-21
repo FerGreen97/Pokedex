@@ -289,6 +289,23 @@ footer {
 .contenedorDebilidad{
     grid-area: debilContra;
 }
+.contenedorBotones{
+    grid-area: botones;
+    display: none;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 15px;
+}
+.buttonSwitch{
+    background-color: #ffffff00;
+    border: 2px solid black;
+    height: 40px;
+    padding: 0px 10px;
+    border-radius: 40px;
+}
+.buttonSwitch:hover{
+    background-color: #ffffff44;
+}
 .grass {
     background-color: #33d303;
 }
@@ -349,12 +366,17 @@ footer {
         grid-template-areas: 
         "nomb"
         "img"
+        "botones"
         "ico"
         "est"
         "hab"
         ;
         max-width: 710px;
         min-width: 520px;
+    }
+    .contenedorBotones{
+        display: flex;
+        align-items: center;
     }
     .imagenesVentana{
         justify-content: space-around;
@@ -373,9 +395,12 @@ footer {
     .containerShiny{
         display: none;
     }
+    .MostrarIconos{
+        display: none;
+    }
     .contenidoVentana{
         padding: 10px;
-        min-width: 310px;
+        min-width: 368px;
     }
     .contenedorEstadisticas{
         min-width: 290px;
