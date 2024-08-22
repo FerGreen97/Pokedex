@@ -413,6 +413,12 @@ footer {
     .logoPokemon{
         width: 300px;
     }
+    .contenedorEstadisticas{
+        display: block;
+    }
+    .contenedorIcono,.contenedorHabilidades{
+        display: none;
+    }
 }
 /* Condiciones tarjeta */
 .mostrar{

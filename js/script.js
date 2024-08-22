@@ -355,7 +355,18 @@ mql.addEventListener("change", (event)=>{
         contenedorEstadisticasHTML.classList.remove("ocultar")
         contenedorHabilidadesHTML.classList.remove("mostrar")
         contenedorHabilidadesHTML.classList.remove("ocultar")
-        contenedorIconosVentanaHTML.classList.remove("mostrar")
+        contenedorIconosVentanaHTML.classList.remove("mostrarAlt")
+        contenedorIconosVentanaHTML.classList.remove("ocultar")
+    }
+})
+const mqlb = window.matchMedia("(max-width: 650px)")
+mqlb.addEventListener("change", (event)=>{
+    if(event.matches){
+        contenedorEstadisticasHTML.classList.remove("mostrar")
+        contenedorEstadisticasHTML.classList.remove("ocultar")
+        contenedorHabilidadesHTML.classList.remove("mostrar")
+        contenedorHabilidadesHTML.classList.remove("ocultar")
+        contenedorIconosVentanaHTML.classList.remove("mostrarAlt")
         contenedorIconosVentanaHTML.classList.remove("ocultar")
     }
 })
