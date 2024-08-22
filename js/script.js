@@ -348,3 +348,44 @@ const info = (idPokemon) => {
             }
         })
 }
+const mql = window.matchMedia("(min-width: 1851px)")
+mql.addEventListener("change", (event)=>{
+    if(event.matches){
+        contenedorEstadisticasHTML.classList.remove("mostrar")
+        contenedorEstadisticasHTML.classList.remove("ocultar")
+        contenedorHabilidadesHTML.classList.remove("mostrar")
+        contenedorHabilidadesHTML.classList.remove("ocultar")
+        contenedorIconosVentanaHTML.classList.remove("mostrar")
+        contenedorIconosVentanaHTML.classList.remove("ocultar")
+    }
+})
+mostrarDetalles = (contenidoSolicitado) => {
+
+    switch(contenidoSolicitado){
+        case 'Estadisticas':
+            contenedorEstadisticasHTML.classList.add("mostrar")
+            contenedorEstadisticasHTML.classList.remove("ocultar")
+            contenedorHabilidadesHTML.classList.remove("mostrar")
+            contenedorHabilidadesHTML.classList.add("ocultar")
+            contenedorIconosVentanaHTML.classList.remove("mostrarAlt")
+            contenedorIconosVentanaHTML.classList.add("ocultar")
+            break
+        case 'Habilidades':
+            contenedorHabilidadesHTML.classList.add("mostrar")
+            contenedorHabilidadesHTML.classList.remove("ocultar")
+            contenedorEstadisticasHTML.classList.remove("mostrar")
+            contenedorEstadisticasHTML.classList.add("ocultar")
+            contenedorIconosVentanaHTML.classList.remove("mostrarAlt")
+            contenedorIconosVentanaHTML.classList.add("ocultar")
+            break
+        case 'Iconos':
+            contenedorIconosVentanaHTML.classList.add("mostrarAlt")
+            contenedorIconosVentanaHTML.classList.remove("ocultar")
+            contenedorEstadisticasHTML.classList.remove("mostrar")
+            contenedorEstadisticasHTML.classList.add("ocultar")
+            contenedorHabilidadesHTML.classList.remove("mostrar")
+            contenedorHabilidadesHTML.classList.add("ocultar")
+            break
+
+    }
+}

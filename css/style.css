@@ -373,6 +373,7 @@ footer {
         ;
         max-width: 710px;
         min-width: 520px;
+        min-height: 950px;
     }
     .contenedorBotones{
         display: flex;
@@ -386,6 +387,9 @@ footer {
     }
     .contenedorIcono,.contenedorHabilidades{
         display: none;
+    }
+    .contenedorHabilidades{
+        max-height: none;
     }
 }
 @media (max-width: 650px) {
@@ -409,4 +413,14 @@ footer {
     .logoPokemon{
         width: 300px;
     }
+}
+/* Condiciones tarjeta */
+.mostrar{
+    display: block;
+}
+.ocultar{
+    display: none;
+}
+.mostrarAlt{
+    display: grid;
 }
