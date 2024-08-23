@@ -363,22 +363,12 @@ footer {
 /*Inicio responsive de la pagina.*/
 @media (max-width: 1850px) {
     .contenidoVentana{
-        grid-template-areas: 
-        "nomb"
-        "img"
-        "botones"
-        "ico"
-        "est"
-        "hab"
-        ;
-        max-width: 710px;
-        min-width: 520px;
-        min-height: 900px;
-    }
-    .contenidoVentana{
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 710px;
+        min-width: 520px;
+        min-height: 900px;
     }
     .nombreVentana{
         order: 1;
@@ -392,6 +382,9 @@ footer {
     .contenedorEstadisticas, .contenedorHabilidades,.contenedorIcono{
         order: 4;
         margin: 0;
+    }
+    .contenedorHabilidades div {
+        display: block;
     }
     .contenedorBotones{
         display: flex;
