@@ -373,7 +373,25 @@ footer {
         ;
         max-width: 710px;
         min-width: 520px;
-        min-height: 950px;
+        min-height: 900px;
+    }
+    .contenidoVentana{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nombreVentana{
+        order: 1;
+    }
+    .imagenesVentana{
+        order: 2;
+    }
+    .contenedorBotones{
+        order: 3;
+    }
+    .contenedorEstadisticas, .contenedorHabilidades,.contenedorIcono{
+        order: 4;
+        margin: 0;
     }
     .contenedorBotones{
         display: flex;
@@ -405,6 +423,7 @@ footer {
     .contenidoVentana{
         padding: 10px;
         min-width: 368px;
+        min-height: none;
     }
     .contenedorEstadisticas{
         min-width: 290px;
