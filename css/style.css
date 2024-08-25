@@ -370,6 +370,10 @@ footer {
         max-width: 710px;
         min-width: 520px;
     }
+    .ventana{
+        overflow: scroll;
+        overscroll-behavior: contain;
+    }
     .nombreVentana{
         order: 1;
     }
