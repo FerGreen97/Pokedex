@@ -221,6 +221,7 @@ footer {
     padding: 15px;
     width: 100%;
     overflow: scroll;
+    overscroll-behavior: contain;
 }
 .contenedorHabilidades{
     max-height: 132px;
@@ -407,11 +408,17 @@ footer {
     .spanShiny,.shiny{
         display: none;
     }
+    body{
+        min-width: 425px;
+    }
     .containerShiny{
         display: none;
     }
     .MostrarIconos{
         display: none;
+    }
+    .contenedorHabilidades,.contenedorEstadisticas{
+        overflow: visible;
     }
     .contenidoVentana{
         padding: 10px;
