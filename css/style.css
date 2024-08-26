@@ -228,7 +228,7 @@ footer {
     max-width: 895px;
     margin-left: 10px;
 }
-.contenedorEstadisticas::-webkit-scrollbar,.contenedorHabilidades::-webkit-scrollbar{
+.contenedorEstadisticas::-webkit-scrollbar,.contenedorHabilidades::-webkit-scrollbar,.ventana::-webkit-scrollbar{
     display: none;
 }
 .contenedorEstadisticas{
