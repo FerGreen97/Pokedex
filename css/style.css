@@ -307,6 +307,28 @@ footer {
 .buttonSwitch:hover{
     background-color: #ffffff44;
 }
+.botonCierre{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 26px;
+    height: 26px;
+}
+.botonCierre button{
+    width: 100%;
+    height: 100%;
+    background-color: #00000000;
+    border: none;
+}
+.botonCierre button::after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 1px;
+    right: 0;
+    background-image: url("../img/close.svg");
+}
 .grass {
     background-color: #33d303;
 }
@@ -368,7 +390,7 @@ footer {
         flex-direction: column;
         align-items: center;
         max-width: 710px;
-        min-width: 520px;
+        min-width: 710px;
     }
     .ventana{
         overflow: scroll;

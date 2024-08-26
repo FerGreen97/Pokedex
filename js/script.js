@@ -348,6 +348,16 @@ const info = (idPokemon) => {
             }
         })
 }
+const botonCierreVentana = document.getElementById("cierreVentana")
+botonCierreVentana.addEventListener("click", (e)=>{
+    ventana.style.display = 'none';
+    contenedorEstadisticasHTML.innerHTML = "<h4>Estadisticas</h4>"
+    contenedorHabilidadesHTML.innerHTML = "<h4>Habilidades</h4>"
+    flagElementChildren = 1
+    contenedorIconosHTML.innerHTML= ``
+    contenedorIconosFuerzaHTML.innerHTML = `<span style="display: none;">Neutral</span>`
+    contenedorDebilidadHTML.innerHTML = ``
+})
 const mql = window.matchMedia("(min-width: 1851px)")
 mql.addEventListener("change", (event)=>{
     if(event.matches){
