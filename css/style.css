@@ -311,22 +311,26 @@ footer {
     position: absolute;
     top: 25px;
     right: 25px;
-    width: 26px;
-    height: 26px;
+    width: 31px;
+    height: 31px;
 }
 .botonCierre button{
+    border-radius: 5px;
     width: 100%;
     height: 100%;
     background-color: #00000000;
     border: none;
+}
+.botonCierre button:hover{
+    background-color: #00000034;
 }
 .botonCierre button::after{
     content: '';
     position: absolute;
     width: 25px;
     height: 25px;
-    top: 1px;
-    right: 0;
+    top: 3px;
+    right: 3px;
     background-image: url("../img/close.svg");
 }
 .grass {
