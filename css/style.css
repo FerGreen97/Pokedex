@@ -333,6 +333,7 @@ footer {
     right: 3px;
     background-image: url("../img/close.svg");
 }
+
 .grass {
     background-color: #33d303;
 }
@@ -387,6 +388,9 @@ footer {
 .water {
     background-color: #0385e9;
 }
+.imagenesVentana div button{
+display: none;
+}
 /*Inicio responsive de la pagina.*/
 @media (max-width: 1850px) {
     .contenidoVentana{
@@ -434,8 +438,44 @@ footer {
     }
 }
 @media (max-width: 650px) {
-    .spanShiny,.shiny{
+    .containerShiny{
         display: none;
+    }
+    .imagenesVentana div:nth-child(1) button::before,.imagenesVentana div:nth-child(2) button::before{
+        content: '';
+        position: relative;
+        width: 80px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        height: 35px;
+    }
+    .imagenesVentana div:nth-child(1) button::before{
+        background: linear-gradient(135deg,#ff0202,#ffd000, #1df811, #00fffb,#2600ff,#ff008c);
+    }
+    .imagenesVentana div:nth-child(2) button::before{
+        background: #d4d4d441;
+    }
+    .imagenesVentana{
+        width: 348px;
+    }
+    .imagenesVentana div:nth-child(1) button,.imagenesVentana div:nth-child(2) button{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        top: 280px;
+        right: 83px;
+        border: none;
+        background-color: #00000000;
+        transform: rotate(320deg);
+    }
+    .imagenesVentana div:nth-child(1) button::after,.imagenesVentana div:nth-child(2) button::after{
+        content:'shiny';
+        position: absolute;
+    }
+    .imagenesVentana div:nth-child(2) button::after{
+        content: 'normal';
     }
     body{
         min-width: 425px;
@@ -451,6 +491,7 @@ footer {
     }
     .contenidoVentana{
         padding: 10px;
+        width: 368px;
         min-width: 368px;
         min-height: none;
     }

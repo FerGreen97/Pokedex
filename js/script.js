@@ -263,13 +263,15 @@ const info = (idPokemon) => {
             contenidoVentana.classList.add(data.types[0].type.name)
             nombreVentanaHTML.innerHTML = `<h3>${data.name}</h3>`
             imagenesVentanaHTML.innerHTML = `
-            <div class="contenedorImagenes">
+            <div class="contenedorImagenes" id="normal">
                 <span>Normal</span>
                 <img src= '${data.sprites.other['official-artwork'].front_default}' alt="imagen de ${data.name}">
+                <button onclick="cambiarImagen('shiny')"></button>
             </div>
-            <div class="contenedorImagenes containerShiny">
+            <div class="contenedorImagenes containerShiny" id="shiny">
                 <span class="spanShiny">Shiny</span>
                 <img class="shiny" src= '${data.sprites.other['official-artwork'].front_shiny}' alt="imagen de ${data.name} shiny">
+                <button onclick="cambiarImagen('normal')"></button>
             </div>
             `
             for (const estadistica of data.stats){
@@ -348,6 +350,21 @@ const info = (idPokemon) => {
             }
         })
 }
+const cambiarImagen = (valor) =>{
+    const imagenPokemonNormalHTML = document.getElementById("normal")
+    const imagenPokemonShinyHTML = document.getElementById("shiny")
+    if(valor === "shiny"){
+        imagenPokemonNormalHTML.classList.add("ocultar")
+        imagenPokemonNormalHTML.classList.remove("mostrarAlt")
+        imagenPokemonShinyHTML.classList.add("mostrarAlt")
+        imagenPokemonShinyHTML.classList.remove("ocultar")
+    }else{
+        imagenPokemonShinyHTML.classList.add("ocultar")
+        imagenPokemonShinyHTML.classList.remove("mostrarAlt")
+        imagenPokemonNormalHTML.classList.remove("ocultar")
+        imagenPokemonNormalHTML.classList.add("mostrarAlt")
+    }
+}
 const botonCierreVentana = document.getElementById("cierreVentana")
 botonCierreVentana.addEventListener("click", (e)=>{
     ventana.style.display = 'none';
@@ -367,6 +384,17 @@ mql.addEventListener("change", (event)=>{
         contenedorHabilidadesHTML.classList.remove("ocultar")
         contenedorIconosVentanaHTML.classList.remove("mostrarAlt")
         contenedorIconosVentanaHTML.classList.remove("ocultar")
+    }
+})
+const mqlc = window.matchMedia("(min-Width:650px)")
+mqlc.addEventListener("change", (event)=>{
+    if(event.matches){
+        const imagenPokemonNormalHTML = document.getElementById("normal")
+        const imagenPokemonShinyHTML = document.getElementById("shiny")
+        imagenPokemonNormalHTML.classList.remove("mostrarAlt")
+        imagenPokemonShinyHTML.classList.remove("ocultar")
+        imagenPokemonShinyHTML.classList.remove("mostrarAlt")
+        imagenPokemonNormalHTML.classList.remove("ocultar")
     }
 })
 const mqlb = window.matchMedia("(max-width: 650px)")
