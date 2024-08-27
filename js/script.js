@@ -355,14 +355,14 @@ const cambiarImagen = (valor) =>{
     const imagenPokemonShinyHTML = document.getElementById("shiny")
     if(valor === "shiny"){
         imagenPokemonNormalHTML.classList.add("ocultar")
-        imagenPokemonNormalHTML.classList.remove("mostrarAlt")
-        imagenPokemonShinyHTML.classList.add("mostrarAlt")
+        imagenPokemonNormalHTML.classList.remove("mostrarFlex")
+        imagenPokemonShinyHTML.classList.add("mostrarFlex")
         imagenPokemonShinyHTML.classList.remove("ocultar")
     }else{
         imagenPokemonShinyHTML.classList.add("ocultar")
-        imagenPokemonShinyHTML.classList.remove("mostrarAlt")
+        imagenPokemonShinyHTML.classList.remove("mostrarFlex")
         imagenPokemonNormalHTML.classList.remove("ocultar")
-        imagenPokemonNormalHTML.classList.add("mostrarAlt")
+        imagenPokemonNormalHTML.classList.add("mostrarFlex")
     }
 }
 const botonCierreVentana = document.getElementById("cierreVentana")
