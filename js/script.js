@@ -266,12 +266,12 @@ const info = (idPokemon) => {
             <div class="contenedorImagenes" id="normal">
                 <span>Normal</span>
                 <img src= '${data.sprites.other['official-artwork'].front_default}' alt="imagen de ${data.name}">
-                <button onclick="cambiarImagen('shiny')"></button>
+                <button type="button" onclick="cambiarImagen('shiny')"></button>
             </div>
             <div class="contenedorImagenes containerShiny" id="shiny">
                 <span class="spanShiny">Shiny</span>
                 <img class="shiny" src= '${data.sprites.other['official-artwork'].front_shiny}' alt="imagen de ${data.name} shiny">
-                <button onclick="cambiarImagen('normal')"></button>
+                <button type="button" onclick="cambiarImagen('normal')"></button>
             </div>
             `
             for (const estadistica of data.stats){
@@ -391,9 +391,9 @@ mqlc.addEventListener("change", (event)=>{
     if(event.matches){
         const imagenPokemonNormalHTML = document.getElementById("normal")
         const imagenPokemonShinyHTML = document.getElementById("shiny")
-        imagenPokemonNormalHTML.classList.remove("mostrarAlt")
+        imagenPokemonNormalHTML.classList.remove("mostrarFlex")
         imagenPokemonShinyHTML.classList.remove("ocultar")
-        imagenPokemonShinyHTML.classList.remove("mostrarAlt")
+        imagenPokemonShinyHTML.classList.remove("mostrarFlex")
         imagenPokemonNormalHTML.classList.remove("ocultar")
     }
 })
