@@ -386,7 +386,7 @@ mql.addEventListener("change", (event)=>{
         contenedorIconosVentanaHTML.classList.remove("ocultar")
     }
 })
-const mqlc = window.matchMedia("(min-Width:650px)")
+const mqlc = window.matchMedia("(min-Width:651px)")
 mqlc.addEventListener("change", (event)=>{
     if(event.matches){
         const imagenPokemonNormalHTML = document.getElementById("normal")
