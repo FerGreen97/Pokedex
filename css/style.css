@@ -444,18 +444,16 @@ display: none;
     .imagenesVentana div:nth-child(1) button::before,.imagenesVentana div:nth-child(2) button::before{
         content: '';
         position: relative;
-        width: 80px;
-        border-bottom-left-radius: 40px;
-        border-bottom-right-radius: 40px;
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
+        width: 100px;
         height: 35px;
+        border-bottom-right-radius: 40px;
+        border-top-left-radius: 40px;
     }
     .imagenesVentana div:nth-child(1) button::before{
-        background: linear-gradient(135deg,#ff0202,#ffd000, #1df811, #00fffb,#2600ff,#ff008c);
+        background: linear-gradient(135deg,#ff020271,#ffd00071, #1df81171, #00fffb71,#2600ff71,#ff008c71);
     }
     .imagenesVentana div:nth-child(2) button::before{
-        background: #d4d4d441;
+        background: #d4d4d471;
     }
     .imagenesVentana{
         width: 348px;
@@ -464,11 +462,10 @@ display: none;
         position: absolute;
         display: flex;
         justify-content: center;
-        top: 280px;
-        right: 83px;
+        top: 291px;
+        right: 92px;
         border: none;
         background-color: #00000000;
-        transform: rotate(320deg);
     }
     .imagenesVentana div:nth-child(1) button::after,.imagenesVentana div:nth-child(2) button::after{
         content:'shiny';
